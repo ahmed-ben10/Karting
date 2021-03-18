@@ -23,15 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/medewerker/deelnemers.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/deelnemer/wijzig_deelnemer.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/details.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten_add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten_add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/deelnemer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,8 +166,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/medewerker" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/deelnemer" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -181,6 +179,7 @@
       <recent name="C:\karting\src\Repository" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\Karting\templates\deelnemer" />
       <recent name="C:\projects\Karting\templates\medewerker" />
       <recent name="C:\karting\templates\medewerker" />
       <recent name="C:\karting\src\Form" />
@@ -203,7 +202,7 @@
       <updated>1615457721011</updated>
       <workItem from="1615457723486" duration="4904000" />
       <workItem from="1616053233124" duration="11144000" />
-      <workItem from="1616073399086" duration="7369000" />
+      <workItem from="1616073399086" duration="10018000" />
     </task>
     <servers />
   </component>
@@ -222,18 +221,22 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616081289532">
+    <state x="604" y="188" key="#com.intellij.ide.util.MemberChooser" timestamp="1616086414757">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616081289532" />
-    <state x="281" y="148" width="594" height="592" key="find.popup" timestamp="1616083139100">
+    <state x="604" y="188" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1616086414757" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616085459701">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="281" y="148" width="594" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616083139100" />
-    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616082785940">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616085459701" />
+    <state x="281" y="148" width="594" height="592" key="find.popup" timestamp="1616087849382">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616082785940" />
+    <state x="281" y="148" width="594" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616087849382" />
+    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616087864511">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616087864511" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

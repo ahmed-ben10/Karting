@@ -43,7 +43,15 @@
 
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="{{ path('app_logout') }}">{{ app.user.username }} uitloggen</a></li>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Dropdown button
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="{{ path('deelnemer_edit') }}">Wijzig account</a>
+                                <a class="dropdown-item" href="{{ path('app_logout') }}">uitloggen</a>
+                            </div>
+                        </div>
                     </ul>
                 </div>
             </div>

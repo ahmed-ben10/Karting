@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Form;
 
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -21,12 +22,12 @@ class UserType extends AbstractType
     {
 
         $builder
-            ->add('username',TextType::class
+            ->add('username', TextType::class
                 , array(
-        'label' => 'Gebruikersnaam'))
+                    'label' => 'Gebruikersnaam'))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
-                'first_options'  => array('label' => 'Wachtwoord'),
+                'first_options' => array('label' => 'Wachtwoord'),
                 'second_options' => array('label' => 'Herhaal wachtwoord'),
             ))
             ->add('voorletters')
