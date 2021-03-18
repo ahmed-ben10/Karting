@@ -92,7 +92,7 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
         }
         $user = $this->entityManager->getRepository(User::class)->findOneBy(['username' => $request->request->get('username')]);
 
-        switch ($user->getRoles()) {
+        switch ($user->getRoles()[0]) {
             case $this->rolen['admin']:
                 return new RedirectResponse('/admin/activiteiten');
             default:
