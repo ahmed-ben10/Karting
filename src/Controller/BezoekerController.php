@@ -10,9 +10,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
-use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
+use Symfony\Component\Routing\Annotation\Route;
 
 class BezoekerController extends AbstractController
 {
@@ -37,6 +36,9 @@ class BezoekerController extends AbstractController
 
     /**
      * @Route("registreren", name="registreren")
+     * @param Request $request
+     * @param UserPasswordEncoderInterface $passwordEncoder
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function registreren(Request $request,UserPasswordEncoderInterface $passwordEncoder)
     {
