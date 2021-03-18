@@ -4,13 +4,16 @@ namespace App\Controller;
 
 use App\Entity\Activiteit;
 use App\Entity\Soortactiviteit;
+use App\Entity\User;
 use App\Form\ActiviteitType;
 use App\Form\SoortActiviteitType;
+use App\Form\UserType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class MedewerkerController extends AbstractController
 {
@@ -262,5 +265,64 @@ class MedewerkerController extends AbstractController
                 'aantal' => count($activiteiten)
             )
         );
+    }
+
+    /**
+     * @Route("/admin/deelnemers", name="deelnemersoverzicht")
+     */
+    public function deelnemerOverzichtAction()
+    {
+
+        $activiteiten = $this->getDoctrine()
+            ->getRepository(Soortactiviteit::class)
+            ->findAll();
+
+        $deelnemers = $this->getDoctrine()
+            ->getRepository(User::class)
+            ->findAll();
+
+        return $this->render('medewerker/deelnemers.html.twig', [
+            'deelnemers' => $deelnemers,
+            'aantal' => count($activiteiten)
+        ]);
+    }
+
+    /**
+     * @Route("/admin/deelnemers/delete/{id}", name="deelnemers_delete")
+     */
+    public function deleteDeelnemersAction($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $a = $this->getDoctrine()
+            ->getRepository(User::class)->find($id);
+        $em->remove($a);
+        $em->flush();
+
+        $this->addFlash(
+            'notice',
+            'Deelnemer verwijderd!'
+        );
+        return $this->redirectToRoute('deelnemersoverzicht');
+
+    }
+
+    /**
+     * @Route("/admin/deelnemers/reset_password/{id}", name="deelnemers_reset_password")
+     */
+    public function resetDeelnemersWachtwoordAction($id, UserPasswordEncoderInterface $passwordEncoder)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $user = $this->getDoctrine()
+            ->getRepository(User::class)->find($id);
+        $password = $passwordEncoder->encodePassword($user, 'qwerty01');
+        $user->setPassword($password);
+        $em->flush();
+
+        $this->addFlash(
+            'notice',
+            'Wachtwoord van '. $user->getUsername() . ' gereset'
+        );
+        return $this->redirectToRoute('deelnemersoverzicht');
+
     }
 }
