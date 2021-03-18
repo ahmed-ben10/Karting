@@ -39,7 +39,7 @@ class Soortactiviteit
     /**
      * @var int
      *
-     * @ORM\Column(name="tijdsduur", type="integer")
+     * @ORM\Column(name="tijdsduur", type="time")
      */
     private $tijdsduur;
 

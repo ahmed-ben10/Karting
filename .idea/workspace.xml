@@ -141,13 +141,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../karting - old" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/medewerker" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\karting\templates\medewerker" />
+      <recent name="C:\karting\src\Form" />
+      <recent name="C:\karting\templates\deelnemer" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\karting\templates\medewerker" />
       <recent name="C:\karting\src" />
       <recent name="C:\karting\src\Repository" />
     </key>
@@ -167,7 +173,7 @@
       <option name="presentableId" value="Default" />
       <updated>1615457721011</updated>
       <workItem from="1615457723486" duration="4904000" />
-      <workItem from="1616053233124" duration="7586000" />
+      <workItem from="1616053233124" duration="11144000" />
     </task>
     <servers />
   </component>
