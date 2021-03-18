@@ -31,7 +31,7 @@ private $username;
 private $password;
 
 /**
-* @ORM\Column(type="string", length=60, unique=false)
+* @ORM\Column(type="string", length=255, unique=false)
  *  @Assert\Email(
  *    message = "The email '{{ value }}' is geen geldig email adres")
  * @Assert\NotBlank(message="vul emailadres in")
