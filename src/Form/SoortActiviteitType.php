@@ -9,6 +9,7 @@ use Symfony\Component\Form\AbstractType;
 
 
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -22,10 +23,9 @@ class SoortActiviteitType extends AbstractType
         $builder
             ->add('naam', TextType::class)
             ->add('beschrijving', TextType::class)
-            ->add('prijs', TextType::class, ['attr' => ['type' => 'number']])
-            ->add('tijdsduur', TimeType::class, ['attr' => ['class' => 'js-timepicker', 'placeholder'=>'hh:mm'],
-                'widget'=>'single_text','html5' => false, 'input' => 'timestamp'])
-            ->add('minLeeftijd', TextType::class, ['attr' => ['type' => 'number']]);
+            ->add('prijs', NumberType::class)
+            ->add('tijdsduur', NumberType::class)
+            ->add('minLeeftijd', NumberType::class);
     }
     public function configureOptions(OptionsResolver $resolver)
     {

@@ -167,7 +167,8 @@ class MedewerkerController extends AbstractController
             ->findAll();
 
         return $this->render('medewerker/soort_activiteiten.html.twig', [
-            'activiteiten' => $activiteiten
+            'activiteiten' => $activiteiten,
+            'aantal' => count($activiteiten)
         ]);
     }
 
@@ -206,7 +207,6 @@ class MedewerkerController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $a->setTijdsduur(to);
             $em->persist($a);
             $em->flush();
 
@@ -219,7 +219,48 @@ class MedewerkerController extends AbstractController
         $activiteiten = $this->getDoctrine()
             ->getRepository(Soortactiviteit::class)
             ->findAll();
-        return $this->render('medewerker/soort_activiteiten_add.html.twig', array('form' => $form->createView(), 'naam' => 'toevoegen', 'aantal' => count($activiteiten)
-        ));
+        return $this->render('medewerker/soort_activiteiten_add.html.twig',
+            array('form' => $form->createView(),
+                'naam' => 'toevoegen',
+                'aantal' => count($activiteiten)
+            )
+        );
+    }
+
+    /**
+     * @Route("/admin/soort_activiteiten/edit/{id}", name="soort_activiteiten_edit")
+     */
+    public function editSoortActiviteitenAction(Request $request, $id)
+    {
+        // create a user and a contact
+        $a = $this->getDoctrine()
+            ->getRepository(Soortactiviteit::class)->find($id);
+
+        $form = $this->createForm(SoortActiviteitType::class, $a);
+        $form->add('save', SubmitType::class, array('label' => "Wijzig"));
+        //$form->add('reset', ResetType::class, array('label'=>"reset"));
+
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($a);
+            $em->flush();
+
+            $this->addFlash(
+                'notice',
+                'Soort activiteit gewijzigd!'
+            );
+            return $this->redirectToRoute('soort_activiteitenoverzicht');
+        }
+        $activiteiten = $this->getDoctrine()
+            ->getRepository(Soortactiviteit::class)
+            ->findAll();
+        return $this->render('medewerker/soort_activiteiten_add.html.twig',
+            array('form' => $form->createView(),
+                'naam' => 'wijzigen',
+                'aantal' => count($activiteiten)
+            )
+        );
     }
 }

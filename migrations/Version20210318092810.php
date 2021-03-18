@@ -20,7 +20,7 @@ final class Version20210318092810 extends AbstractMigration
     public function up(Schema $schema) : void
     {
         // this up() migration is auto-generated, please modify it to your needs
-        $this->addSql('ALTER TABLE app_users CHANGE password password VARCHAR(64) NOT NULL');
+        $this->addSql('ALTER TABLE app_users CHANGE password password VARCHAR(255) NOT NULL');
         $this->addSql('ALTER TABLE soortactiviteiten ADD beschrijving VARCHAR(255) DEFAULT NULL');
     }
 

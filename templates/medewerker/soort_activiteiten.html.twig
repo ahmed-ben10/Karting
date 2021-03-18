@@ -1,59 +1,65 @@
 {% extends 'deelnemer.html.twig' %}
 {% block menu %}
-    <li><a href="{{ path('activiteiten') }}">home</a></li>
+    <li><a href="{{ path('activiteitenoverzicht') }}">home</a></li>
+    <li><a href="{{ path('beheer') }}"><span class="badge">{{ aantal }}</span>beheer</a></li>
+    <li class="active"><a href="{{ path('soort_activiteitenoverzicht') }}">soorten activiteiten</a></li>
 {% endblock %}
 
 
 {% block content %}
-<section >
-    <table class="table" style="table-layout: fixed" >
-        <caption>
-            Dit zijn alle beschikbare soorten activiteiten
-        </caption>
-        <thead>
-        <tr>
-            <td>Naam</td>
-            <td>Beschrijving</td>
-            <td>prijs</td>
-            <td>Tijdsduur</td>
-            <td>Minimum leeftijd</td>
-        </tr>
-        </thead>
-        <tbody>
-        {% for activiteit in activiteiten %}
-        <tr>
-            <td>
-                {{ activiteit.naam}}
-            </td>
-            <td>
-                {{ activiteit.beschrijving}}
-            </td>
+    <section>
+        <table class="table" style="table-layout: fixed">
+            <caption>
+                Dit zijn alle beschikbare soorten activiteiten
+            </caption>
+            <thead>
+            <tr>
+                <td>Naam</td>
+                <td>Beschrijving</td>
+                <td>prijs</td>
+                <td>Tijdsduur</td>
+                <td>Minimum leeftijd</td>
+                <td>Bewerken</td>
+                <td>Verwijderen</td>
+            </tr>
+            </thead>
+            <tbody>
+            {% for activiteit in activiteiten %}
+                <tr>
+                    <td>
+                        {{ activiteit.naam }}
+                    </td>
+                    <td>
+                        {{ activiteit.beschrijving }}
+                    </td>
 
-            <td>
-                &euro;{{ activiteit.prijs}}
-            </td>
-            <td>
-                {{ activiteit.tijdsduur}}
-            </td>
-            <td>
-                {{ activiteit.minLeeftijd}}
-            </td>
-            <td>
-                <a href="{{ path('soort_activiteiten_delete', {'id':activiteit.id}) }}" >
-                    <span class="glyphicon glyphicon-pencil" style="color:red; margin-right: 10px"></span>
-                </a>
-                <a href="{{ path('soort_activiteiten_delete', {'id':activiteit.id}) }}" >
-                    <span class="glyphicon glyphicon-minus" style="color:red"></span>
-                </a>
-            </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-    <a href="" >
-        <span class="glyphicon glyphicon-plus" style="color:red"></span>
-    </a>
-</section>
+                    <td>
+                        &euro;{{ activiteit.prijs }}
+                    </td>
+                    <td>
+                        {{ activiteit.tijdsduur }} min
+                    </td>
+                    <td>
+                        {{ activiteit.minLeeftijd }}
+                    </td>
+                    <td>
+                        <a href="{{ path('soort_activiteiten_edit', {'id':activiteit.id}) }}">
+                            <span class="glyphicon glyphicon-pencil" style="color:red; margin-right: 10px"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('soort_activiteiten_delete', {'id':activiteit.id}) }}">
+                            <span class="glyphicon glyphicon-minus" style="color:red"></span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('soort_activiteiten_add') }}">
+            <span class="glyphicon glyphicon-plus" style="color:red"></span>
+        </a>
+    </section>
 
 
 {% endblock %}
