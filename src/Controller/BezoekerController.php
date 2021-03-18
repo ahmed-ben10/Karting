@@ -49,7 +49,7 @@ class BezoekerController extends AbstractController
         // 2) handle the submit (will only happen on POST)
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && !$form->isValid())
+        if ($form->isSubmitted() && $form->isValid())
         {
             // 2.5) Is the user new, gebruikersnaam moet uniek zijn
             $repository=$this->getDoctrine()->getRepository(User::class);

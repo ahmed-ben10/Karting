@@ -53,17 +53,17 @@ INSERT INTO `activiteiten` (`id`, `soort_id`, `datum`, `tijd`) VALUES
 
 CREATE TABLE IF NOT EXISTS `app_users` (
 `id` int(11) NOT NULL,
-  `username` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `roles` longtext COLLATE utf8_unicode_ci NOT NULL COMMENT '(DC2Type:json_array)',
   `voorletters` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
   `tussenvoegsel` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `achternaam` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `adres` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
-  `postcode` varchar(7) COLLATE utf8_unicode_ci NOT NULL,
-  `woonplaats` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `telefoon` varchar(15) COLLATE utf8_unicode_ci NOT NULL
+  `achternaam` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `adres` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `postcode` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `woonplaats` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `telefoon` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
 
 --

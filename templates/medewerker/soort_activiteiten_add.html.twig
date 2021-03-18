@@ -5,8 +5,8 @@
     {%- if label is not same as(false) and label is empty -%}
         {%- if label_format is not empty -%}
             {% set label = label_format|replace({
-            '%name%': name,
-            '%id%': id,
+                '%name%': name,
+                '%id%': id,
             }) %}
         {%- else -%}
             {% set label = name|humanize %}
@@ -21,7 +21,8 @@
 
 {% block menu %}
     <li><a href="{{ path('activiteitenoverzicht') }}">home</a></li>
-    <li><a href="{{ path('beheer') }}"><span class="badge">{{ aantal}}</span>beheer</a></li>
+    <li><a href="{{ path('beheer') }}"><span class="badge">{{ aantal }}</span>beheer</a></li>
+    <li class="active"><a href="{{ path('soort_activiteitenoverzicht') }}">soorten activiteiten</a></li>
 {% endblock %}
 
 
@@ -29,9 +30,9 @@
 {% block content %}
     <h3>Activiteit {{ naam }}</h3>
 
-        {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
+    {{ form_start(form, {'attr': {'novalidate': 'novalidate'}}) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
 
 
 {% endblock %}

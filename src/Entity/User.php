@@ -20,7 +20,7 @@ class User implements UserInterface, \Serializable
 private $id;
 
 /**
-* @ORM\Column(type="string", length=25, unique=true)
+* @ORM\Column(type="string", length=255, unique=true)
 * @Assert\NotBlank(message="vul gebruikersnaam in")
 */
 private $username;
@@ -39,7 +39,7 @@ private $password;
 private $email;
 
 /**
- * @Assert\Length(max=4096)
+ * @Assert\Length(max=255)
  * @Assert\NotBlank(message="vul wachtwoord in")
  */
 private $plainPassword;
@@ -61,31 +61,31 @@ private $voorletters;
 private $tussenvoegsel;
 
 /**
- * @ORM\Column(type="string", length=25)
+ * @ORM\Column(type="string", length=255)
  * @Assert\NotBlank(message="vul achternaam in")
  */
 private $achternaam;
 
 /**
- * @ORM\Column(type="string", length=25)
+ * @ORM\Column(type="string", length=255)
  * @Assert\NotBlank(message="vul adres in")
  *
  */
 private $adres;
 
 /**
- * @ORM\Column(type="string", length=7)
+ * @ORM\Column(type="string", length=10)
  * @Assert\NotBlank(message="vul postcode in")
  */
 private $postcode;
 
 /**
- * @ORM\Column(type="string", length=20)
+ * @ORM\Column(type="string", length=255)
  * @Assert\NotBlank(message="vul woonplaats in")
  */
 private $woonplaats;
 /**
- * @ORM\Column(type="string", length=15)
+ * @ORM\Column(type="string", length=20)
  *  @Assert\NotBlank(message="vul telfoonnummer in")
  */
 private $telefoon;
