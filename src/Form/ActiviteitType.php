@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 
 
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -23,6 +24,7 @@ class ActiviteitType extends AbstractType
                ])
             ->add('tijd', TimeType::class, ['attr' => ['class' => 'js-timepicker', 'placeholder'=>'hh:mm'],
                 'widget'=>'single_text','html5' => false,])
+            ->add('limiet', NumberType::class)
             ->add('soort', EntityType::class,
                 array('class' => 'App:Soortactiviteit',
                     'choice_label' => 'naam',));

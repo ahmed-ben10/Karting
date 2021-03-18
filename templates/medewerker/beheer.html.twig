@@ -15,6 +15,7 @@
                 <td>Tijd</td>
                 <td>soort activiteit</td>
                 <td>deelnemers</td>
+                <td>plaatsen</td>
                 <td>bewerken</td>
                 <td>verwijderen</td>
             </tr>
@@ -34,6 +35,9 @@
                     </td>
                     <td>
                         {{ activiteit.users|length}}
+                    </td>
+                    <td>
+                        {{ activiteit.limiet }}
                     </td>
                     <td title="bewerk de gegevens van deze activiteit">
 
