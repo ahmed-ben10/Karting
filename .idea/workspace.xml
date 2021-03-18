@@ -3,9 +3,35 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Repository/ActiviteitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ActiviteitRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/medewerker/deelnemers.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/add.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten_add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten_add.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,21 +169,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/medewerker" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\karting\templates\medewerker" />
-      <recent name="C:\karting\src\Form" />
-      <recent name="C:\karting\templates\deelnemer" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\karting\templates\medewerker" />
       <recent name="C:\karting\src" />
       <recent name="C:\karting\src\Repository" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\Karting\templates\medewerker" />
+      <recent name="C:\karting\templates\medewerker" />
+      <recent name="C:\karting\src\Form" />
+      <recent name="C:\karting\templates\deelnemer" />
     </key>
   </component>
   <component name="RunManager">
@@ -176,22 +203,37 @@
       <updated>1615457721011</updated>
       <workItem from="1615457723486" duration="4904000" />
       <workItem from="1616053233124" duration="11144000" />
-      <workItem from="1616073399086" duration="4924000" />
+      <workItem from="1616073399086" duration="7369000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="281" y="148" width="594" height="564" key="find.popup" timestamp="1616080049442">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616081289532">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="281" y="148" width="594" height="564" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616080049442" />
-    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616080638032">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616081289532" />
+    <state x="281" y="148" width="594" height="592" key="find.popup" timestamp="1616083139100">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616080638032" />
+    <state x="281" y="148" width="594" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616083139100" />
+    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616082785940">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616082785940" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
