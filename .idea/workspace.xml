@@ -23,12 +23,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/deelnemer/wijzig_deelnemer.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/App.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/karting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/karting.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/deelnemer.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/bezoeker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/bezoeker.html.twig" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +44,15 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="JavaScript File" />
+        <option value="Vue Single File Component" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -154,6 +169,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pbhUaLZOarVfhkFqusaCpZyAvg" />
@@ -166,7 +182,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/deelnemer" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../social_media" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
@@ -202,7 +218,10 @@
       <updated>1615457721011</updated>
       <workItem from="1615457723486" duration="4904000" />
       <workItem from="1616053233124" duration="11144000" />
-      <workItem from="1616073399086" duration="10018000" />
+      <workItem from="1616073399086" duration="10460000" />
+      <workItem from="1616089014012" duration="4000" />
+      <workItem from="1616138280657" duration="575000" />
+      <workItem from="1616326515460" duration="2917000" />
     </task>
     <servers />
   </component>
@@ -219,6 +238,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="604" y="188" key="#com.intellij.ide.util.MemberChooser" timestamp="1616086414757">
@@ -229,14 +249,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616085459701" />
-    <state x="281" y="148" width="594" height="592" key="find.popup" timestamp="1616087849382">
+    <state x="633" y="204" key="FileChooserDialogImpl" timestamp="1616328856494">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="281" y="148" width="594" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616087849382" />
-    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616087864511">
+    <state x="633" y="204" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616328856494" />
+    <state x="791" y="257" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616138860012" />
+    <state x="281" y="148" width="594" height="592" key="find.popup" timestamp="1616327881198">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616087864511" />
+    <state x="281" y="148" width="594" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616327881198" />
+    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616329023014">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="234" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616329023014" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -245,6 +270,11 @@
           <url>file://$PROJECT_DIR$/src/Controller/BezoekerController.php</url>
           <line>45</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/templates/bezoeker.html.twig</url>
+          <line>3</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -25,6 +25,8 @@
                 $('.js-timepicker').timepicker();
             } );
         </script>
+        <script src="{{ asset('build/app.js')}}"></script>
+        {{ encore_entry_script_tags('app') }}
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
