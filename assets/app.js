@@ -15,8 +15,10 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
+import Notifications from 'vue-notification';
 
-Vue.config.devtools = true
+Vue.config.devtools = true;
+Vue.use(Notifications);
 
 new Vue({
     components: { App },
