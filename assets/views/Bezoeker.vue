@@ -11,6 +11,7 @@
                 </div>
 
             </div>
+            <notifications group="message" />
         </header>
         <nav class="navbar navbar-default" style="margin-bottom: 0px">
             <div class="container-fluid">
