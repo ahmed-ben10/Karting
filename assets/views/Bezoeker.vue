@@ -24,13 +24,21 @@
                 </div>
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">home</a></li>
-                        <li><a href="#">aanbod</a></li>
-                        <li><a href="#">registreren</a></li>
+                        <li>
+                            <router-link to="/" active-class="active" exact>Home</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/kartactiviteiten" active-class="active" exact>Aanbod</router-link>
+                        </li>
+                        <li>
+                            <router-link to="/registreren" active-class="active" exact>Registreren</router-link>
+                        </li>
                         <li><a href="#">contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#">inloggen</a></li>
+                        <li>
+                            <router-link to="/login" active-class="active" exact>Login</router-link>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -60,6 +68,6 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 </style>

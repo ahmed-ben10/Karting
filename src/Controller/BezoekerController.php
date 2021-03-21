@@ -6,32 +6,33 @@ use App\Entity\Soortactiviteit;
 use App\Entity\User;
 use App\Form\ActiviteitType;
 use App\Form\UserType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class BezoekerController extends AbstractController
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction()
-    {
+    private $serializer;
+    private $em;
 
-        return $this->render('bezoeker/index.html.twig',array('boodschap'=>'Welkom'));
+    public function __construct(EntityManagerInterface $em, SerializerInterface $serializer)
+    {
+        $this->em = $em;
+        $this->serializer = $serializer;
     }
 
     /**
-     * @Route("/kartactiviteiten", name="kartactiviteiten")
+     * @Route("/", name="homepage")
      */
-    public function kartactiviteitenAction()
-    {
-        $repository=$this->getDoctrine()->getRepository(Soortactiviteit::class);
-        $soortactiviteiten=$repository->findAll();
-        return $this->render('bezoeker/kartactiviteiten.html.twig',array('boodschap'=>'Welkom','soortactiviteiten'=>$soortactiviteiten));
+    public function indexAction(){
+        return $this->render('base.html.twig');
     }
 
     /**
@@ -90,52 +91,14 @@ class BezoekerController extends AbstractController
         ]);
     }
 
-//    /**
-//     * @Route("/login", name="login")
-//     */
-//    public function loginAction(Request $request, AuthenticationUtils $authUtils)
-//    {
-//        // get the login error if there is one
-//        $error = $authUtils->getLastAuthenticationError();
-//
-//        // last username entered by the user
-//        $lastUsername = $authUtils->getLastUsername();
-//        if (isset($error)) {
-//            $this->addFlash(
-//                'error',
-//                'Gegevens kloppen niet. Probeer opnieuw.'
-//            );
-//        } else {
-//
-//            $this->addFlash(
-//                'notice',
-//                'Vul uw gegevens in'
-//            );
-//        }
-//        return $this->render('bezoeker/login.html.twig', array(
-//            'last_username' => $lastUsername,
-//            'error'         => $error,
-//        ));
-//    }
-
     /**
-     * @Route("nieuwSoortActiviteit", name="nieuwSoortActiviteit")
+     * @Route("/api/soort_activiteit", name="getAllSoortActiviteiten")
      */
-    public function nieuweSoortActiviteitToevoegenAction(Request $request)
+    public function getAllSoortActiviteiten(Request $request)
     {
-        $soortAct = new Soortactiviteit();
-        $soortAct->setNaam('Geef een naam op!');
+        $posts = $this->em->getRepository(Soortactiviteit::class)->findAll();
+        $data = $this->serializer->serialize($posts, JsonEncoder::FORMAT);
 
-        $form = $this->createForm(ActiviteitType::class,$soortAct);
-        $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid())
-        {
-            $soortAct = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($soortAct);
-            $em->flush();
-            return $this->redirectToRoute('kartactiviteiten');
-        }
-        return $this->render('admin/nieuwSA.html.twig',array('boodschap'=>'Voeg een nieuwe Activiteit toe','form'=>$form->createView(),));
+        return new JsonResponse($data, Response::HTTP_OK, [], true);
     }
 }
