@@ -71,9 +71,10 @@ Encore
     // uncomment if you're having problems with a jQuery plugin
     //.autoProvidejQuery()
     .enableVueLoader()
+    .cleanupOutputBeforeBuild()
     .copyFiles({
         from: './assets/img',
-    })
+        to: 'img/[path][name].[ext]'    })
 ;
 
 module.exports = Encore.getWebpackConfig();
