@@ -29,7 +29,7 @@ class BezoekerController extends AbstractController
     }
 
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{vueRouting}", requirements={"vueRouting"="^(?!api|_(profiler|wdt)).*"}, name="homepage")
      */
     public function indexAction(){
         return $this->render('base.html.twig');
