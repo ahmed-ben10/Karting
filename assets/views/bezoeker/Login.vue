@@ -1,15 +1,12 @@
 <template>
     <div>
         <h2>Inloggen</h2>
-
         <form class="form-horizontal" method="post" @submit.prevent="submit">
-
             <div class="form-group">
 
                 <label class="control-label col-sm-2" for="username">Inlognaam:</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="username" name="username" v-model="form.username"
-                           required="required"/>
+                    <input type="text" class="form-control" id="username" name="username" v-model="form.username"/>
                 </div>
             </div>
 
@@ -17,8 +14,7 @@
 
                 <label class="control-label col-sm-2" for="pwd">Wachtwoord:</label>
                 <div class="col-sm-6">
-                    <input type="password" class="form-control" id="pwd" name="password" v-model="form.password"
-                           required="required"/>
+                    <input type="password" class="form-control" id="pwd" name="password" v-model="form.password"/>
                 </div>
             </div>
             <!--            <input type="hidden" name="_csrf_token"-->
@@ -29,7 +25,6 @@
                     <button type="submit" class="btn btn-primary">Login</button>
                 </div>
             </div>
-
         </form>
     </div>
 </template>
@@ -51,7 +46,7 @@ export default {
         submit() {
             axios.post('api/login', this.form).then((res) => {
                 if (res.data.error) {
-                    this.$notify({ group: 'message', text: res.data.error.message })
+                    this.$notify({group: 'message', text: res.data.error.message})
                 }
             }).catch((error) => {
                 console.error(error)
