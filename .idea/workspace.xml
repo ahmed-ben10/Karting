@@ -22,12 +22,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/views/Bezoeker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/Bezoeker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Login.vue" afterDir="false" />
-    </list>
+    <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -218,6 +213,8 @@
       <workItem from="1616089014012" duration="4000" />
       <workItem from="1616138280657" duration="575000" />
       <workItem from="1616326515460" duration="12914000" />
+      <workItem from="1616067250214" duration="231000" />
+      <workItem from="1616658241957" duration="323000" />
     </task>
     <servers />
   </component>
@@ -280,7 +277,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/Controller/BezoekerController.php</url>
-          <line>46</line>
+          <line>47</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
