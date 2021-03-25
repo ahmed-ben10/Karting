@@ -7,6 +7,9 @@
         "vue-notification": "^1.3.20",
         "vue-router": "^3.5.1"
     },
+    "scripts": {
+        "watch": "encore dev --watch"
+    },
     "devDependencies": {
         "@symfony/stimulus-bridge": "2.0.0",
         "@symfony/webpack-encore": "^1.1.2",
