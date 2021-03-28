@@ -20,22 +20,24 @@ export default {
                 username: {
                     fieldType: 'InputLabel',
                     name: 'username',
-                    label: 'Gebruikersnaam',
+                    label: 'Gebruikersnaam'
                 },
                 plainPassword: {
                     fieldType: 'InputLabel',
-                    name: 'plain_password',
+                    name: 'plainPassword',
                     label: 'Wachtwoord',
                     type: 'password',
-                    hasConfirm: true,
-                    confirmLabel: 'Herhaal wachtwoord'
+                    hasConfirm: true
                 },
-                // plainPasswordRepeat: {
-                //     fieldType: 'InputLabel',
-                //     name: 'plain_password_repeat',
-                //     label: 'Herhaal Wachtwoord',
-                //     type: 'password',
-                // },
+                plainPasswordRepeat: {
+                    fieldType: 'InputLabel',
+                    name: 'plainPasswordRepeat',
+                    required: false,
+                    label: 'Herhaal Wachtwoord',
+                    isConfirm: true,
+                    confirmField: 'plainPassword',
+                    type: 'password'
+                },
                 voorletters: {
                     fieldType: 'InputLabel',
                     name: 'voorletters',
@@ -71,7 +73,7 @@ export default {
                     fieldType: 'InputLabel',
                     name: 'email',
                     label: 'Email',
-                    type: 'email',
+                    type: 'email'
                 },
                 telefoon: {
                     fieldType: 'InputLabel',
@@ -89,7 +91,13 @@ export default {
     methods: {
         submit(formData) {
             axios.post('api/registreren', formData).then((res) => {
-                console.log(res.data)
+                this.$notify({
+                    group: 'message',
+                    title: res.data.title,
+                    type: 'success',
+                    duration: 10000
+                })
+                this.$router.push({ name: 'BezoekerLogin' })
             }).catch((error) => {
                 let errors = error.response.data.errors;
                 for (let key in errors) {

@@ -29,7 +29,8 @@ class UserType extends AbstractType
                 'type' => PasswordType::class,
                 'first_options' => array('label' => 'Wachtwoord'),
                 'second_options' => array('label' => 'Herhaal wachtwoord'),
-            ))            ->add('voorletters')
+            ))
+            ->add('voorletters')
             ->add('tussenvoegsel')
             ->add('achternaam')
             ->add('adres')
