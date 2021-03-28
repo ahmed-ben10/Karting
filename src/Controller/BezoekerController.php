@@ -58,40 +58,32 @@ class BezoekerController extends AbstractController
                 'title' => 'Er is een validatie error',
                 'errors' => $errors
             ];
-            return new JsonResponse($data, 400);
-        }
-        $data = $request->request->all();
-
-        $user->setUsername($data['username']);
-
-        if (
-            $request->request->has('plainPassword') &&
-            $request->request->has('plainPasswordRepeat') &&
-            $data['plain_password'] === $data['plain_password_repeat']
-        ) {
-            $password = $passwordEncoder->encodePassword($user, $data['plain_password']);
-            $user->setPassword($password);
-        } else {
-            $data = $this->serializer->serialize(['error' => 'password error'], JsonEncoder::FORMAT);
-            return new JsonResponse($data, Response::HTTP_BAD_REQUEST, [], true);
+            return new JsonResponse($data, Response::HTTP_BAD_REQUEST);
         }
 
-        $user->setVoorletters($data['voorletters']);
-        $user->setTussenvoegsel($data['tussenvoegsel']);
-        $user->setAchternaam($data['achternaam']);
-        $user->setAdres($data['adres']);
-        $user->setPostcode($data['postcode']);
-        $user->setWoonplaats($data['woonplaats']);
-        $user->setEmail($data['email']);
-        $user->setTelefoon($data['telefoon']);
+        $repository = $this->getDoctrine()->getRepository(User::class);
+        $bestaande_user = $repository->findOneBy(['username' => $form->getData()->getUsername()]);
+        if ($bestaande_user) {
+            $data = [
+                'type' => 'validation_error',
+                'title' => 'Gebruiker bestaat al',
+                'errors' => ['']
+            ];
+            return new JsonResponse($data, Response::HTTP_BAD_REQUEST);
+        }
 
+        $password = $passwordEncoder->encodePassword($user, $user->getPlainPassword());
+        $user->setPassword($password);
         $em = $this->getDoctrine()->getManager();
         $em->persist($user);
         $em->flush();
 
-        $data = $this->serializer->serialize(['success' => 'success'], JsonEncoder::FORMAT);
 
-        return new JsonResponse($data, Response::HTTP_OK, [], true);
+        $data = [
+            'type' => 'success',
+            'title' => 'Gebruiker successvol aangemaakt',
+        ];
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     /**

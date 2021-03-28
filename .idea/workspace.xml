@@ -23,23 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/components/form/Form.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/Button.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/Input.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/InputLabel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/Label.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/utils/form.util.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/utils/validation.util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/form/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/Form.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Registreren.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Registreren.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/ActiviteitType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ActiviteitType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +71,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/persistence" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
       <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
-      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
       <path value="$PROJECT_DIR$/vendor/doctrine/migrations" />
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-migrations-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/sql-formatter" />
@@ -98,11 +87,9 @@
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/symfony/web-profiler-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
-      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/flex" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/cache-contracts" />
-      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
       <path value="$PROJECT_DIR$/vendor/symfony/stopwatch" />
       <path value="$PROJECT_DIR$/vendor/symfony/config" />
@@ -139,7 +126,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
       <path value="$PROJECT_DIR$/vendor/symfony/expression-language" />
-      <path value="$PROJECT_DIR$/vendor/symfony/framework-bundle" />
       <path value="$PROJECT_DIR$/vendor/symfony/options-resolver" />
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
@@ -152,7 +138,6 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
       <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
       <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
       <path value="$PROJECT_DIR$/vendor/doctrine/common" />
       <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
@@ -175,6 +160,11 @@
       <path value="$PROJECT_DIR$/vendor/psr/cache" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
       <path value="$PROJECT_DIR$/vendor/symfony/webpack-encore-bundle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/framework-bundle" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-bundle" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
     </include_path>
   </component>
   <component name="ProjectId" id="1pbhUaLZOarVfhkFqusaCpZyAvg" />
@@ -237,6 +227,7 @@
       <workItem from="1616676820464" duration="18254000" />
       <workItem from="1616744626351" duration="650000" />
       <workItem from="1616932007781" duration="8595000" />
+      <workItem from="1616944001379" duration="4175000" />
     </task>
     <servers />
   </component>
@@ -264,18 +255,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616694303507" />
-    <state x="478" y="145" width="624" height="592" key="find.popup" timestamp="1616942536217">
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1616947606138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="145" width="624" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616942536217" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1616947606138" />
+    <state x="478" y="145" width="624" height="592" key="find.popup" timestamp="1616948808007">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="624" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616948808007" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1616932320220">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1616932320220" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616939051719">
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616948559330">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616939051719" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616948559330" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
