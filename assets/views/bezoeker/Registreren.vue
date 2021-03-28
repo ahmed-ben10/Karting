@@ -1,112 +1,106 @@
 <template>
-    <div>
+    <div v-if="form_schema">
         <h2>Registreren</h2>
-        <form class="form-horizontal" method="post" @submit.prevent="submit">
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="username">Inlognaam:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="username" name="username" v-model="form.username" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="plain_password">Wachtwoord:</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="plain_password" name="plain_password" v-model="form.plainPassword" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="plain_password_repeat">Herhaal wachtwoord:</label>
-                <div class="col-sm-6">
-                    <input type="password" class="form-control" id="plain_password_repeat" name="plain_password_repeat" v-model="form.plainPasswordRepeat" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="voorletters">Voorletters:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="voorletters" name="voorletters" v-model="form.voorletters" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="username">Tussenvoegsel:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="tussenvoegsel" name="tussenvoegsel" v-model="form.tussenvoegsel" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="achternaam">Achternaam:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="achternaam" name="achternaam" v-model="form.achternaam" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="adres">Adres:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="adres" name="adres" v-model="form.adres" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="postcode">Postcode:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="postcode" name="postcode" v-model="form.postcode" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="woonplaats">Woonplaats:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="woonplaats" name="woonplaats" v-model="form.woonplaats" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="email">Email:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="email" name="email" v-model="form.email" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="control-label col-sm-2" for="telefoon">Telefoon:</label>
-                <div class="col-sm-6">
-                    <input type="text" class="form-control" id="telefoon" name="telefoon" v-model="form.telefoon" />
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-primary">Registreren</button>
-                </div>
-            </div>
-        </form>
+        <Form :form-schema="form_schema" @submit="submit"/>
     </div>
 </template>
 
 <script>
-import axios from "axios";
+import axios from 'axios';
+import Form from '../../components/form/Form';
 
 export default {
     name: "Registreren",
+    components: {
+        Form
+    },
     data: function () {
         return {
-            form: {
-                username: '',
-                plainPassword: '',
-                plainPasswordRepeat: '',
-                voorletters: '',
-                tussenvoegsel: '',
-                achternaam: '',
-                adres: '',
-                postcode: '',
-                woonplaats: '',
-                email: '',
-                telefoon: ''
+            form_schema: {
+                username: {
+                    fieldType: 'InputLabel',
+                    name: 'username',
+                    label: 'Gebruikersnaam',
+                },
+                plainPassword: {
+                    fieldType: 'InputLabel',
+                    name: 'plain_password',
+                    label: 'Wachtwoord',
+                    type: 'password',
+                    hasConfirm: true,
+                    confirmLabel: 'Herhaal wachtwoord'
+                },
+                // plainPasswordRepeat: {
+                //     fieldType: 'InputLabel',
+                //     name: 'plain_password_repeat',
+                //     label: 'Herhaal Wachtwoord',
+                //     type: 'password',
+                // },
+                voorletters: {
+                    fieldType: 'InputLabel',
+                    name: 'voorletters',
+                    label: 'Voorletters'
+                },
+                tussenvoegsel: {
+                    fieldType: 'InputLabel',
+                    name: 'tussenvoegsel',
+                    label: 'Tussenvoegsel',
+                    required: false
+                },
+                achternaam: {
+                    fieldType: 'InputLabel',
+                    name: 'achternaam',
+                    label: 'Achternaam'
+                },
+                adres: {
+                    fieldType: 'InputLabel',
+                    name: 'adres',
+                    label: 'Adres'
+                },
+                postcode: {
+                    fieldType: 'InputLabel',
+                    name: 'postcode',
+                    label: 'Postcode'
+                },
+                woonplaats: {
+                    fieldType: 'InputLabel',
+                    name: 'woonplaats',
+                    label: 'Woonplaats'
+                },
+                email: {
+                    fieldType: 'InputLabel',
+                    name: 'email',
+                    label: 'Email',
+                    type: 'email',
+                },
+                telefoon: {
+                    fieldType: 'InputLabel',
+                    name: 'telefoon',
+                    label: 'Telefoon'
+                },
+                button: {
+                    fieldType: 'Button',
+                    label: 'Registreren',
+                    required: false
+                }
             }
         }
     },
     methods: {
-        submit() {
-            axios.post('api/login', this.form).then((res) => {
-                if (res.data.error) {
-                    this.$notify({group: 'message', text: res.data.error.message})
-                }
+        submit(formData) {
+            axios.post('api/registreren', formData).then((res) => {
+                console.log(res.data)
             }).catch((error) => {
-                console.error(error)
+                let errors = error.response.data.errors;
+                for (let key in errors) {
+                    this.$notify({
+                        group: 'message',
+                        title: error.response.data.title,
+                        text: errors[key][0],
+                        type: 'warn',
+                        duration: 10000
+                    })
+                }
             });
         }
     }
