@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/User.php
+
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -7,6 +7,7 @@ use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+
 
 /**
  * @ORM\Table(name="app_users")
@@ -48,6 +49,7 @@ class User implements UserInterface, \Serializable, EquatableInterface
 
     /**
      * @Assert\Length(max=255)
+     * @Assert\NotNull
      * @Assert\NotBlank(message="vul wachtwoord in")
      */
     private $plainPassword;

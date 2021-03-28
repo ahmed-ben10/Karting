@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Form/ActiviteitType
+
 namespace App\Form;
 use App\Entity\Activiteit;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;

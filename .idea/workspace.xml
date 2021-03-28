@@ -22,7 +22,25 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="" />
+    <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/assets/components/form/Form.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/Button.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/Input.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/InputLabel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/Label.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/utils/form.util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/utils/validation.util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Registreren.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Registreren.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ActiviteitType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ActiviteitType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +54,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="JavaScript File" />
         <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -170,7 +188,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../social_media" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/components/form/fields" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Blade" />
@@ -178,19 +196,19 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\Karting\templates\deelnemer" />
-      <recent name="C:\projects\Karting\templates\medewerker" />
-      <recent name="C:\karting\templates\medewerker" />
-      <recent name="C:\karting\src\Form" />
-      <recent name="C:\karting\templates\deelnemer" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\Karting\assets\components\form" />
       <recent name="C:\projects\Karting\public\js" />
       <recent name="C:\projects\Karting\assets" />
       <recent name="C:\projects\Karting\assets\img" />
       <recent name="C:\karting\templates\medewerker" />
-      <recent name="C:\karting\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projects\Karting\assets\components\form\fields" />
+      <recent name="C:\projects\Karting\templates\deelnemer" />
+      <recent name="C:\projects\Karting\templates\medewerker" />
+      <recent name="C:\karting\templates\medewerker" />
+      <recent name="C:\karting\src\Form" />
     </key>
   </component>
   <component name="RunManager">
@@ -216,6 +234,9 @@
       <workItem from="1616067250214" duration="231000" />
       <workItem from="1616658241957" duration="2283000" />
       <workItem from="1616664778497" duration="3235000" />
+      <workItem from="1616676820464" duration="18254000" />
+      <workItem from="1616744626351" duration="650000" />
+      <workItem from="1616932007781" duration="8595000" />
     </task>
     <servers />
   </component>
@@ -234,13 +255,35 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser" timestamp="1616694545693">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1616694545693" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1616694303507">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1616694303507" />
+    <state x="478" y="145" width="624" height="592" key="find.popup" timestamp="1616942536217">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="478" y="145" width="624" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616942536217" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1616932320220">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1616932320220" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616939051719">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616939051719" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controller/BezoekerController.php</url>
-          <line>47</line>
-          <option name="timeStamp" value="1" />
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/assets/components/form/fields/Label.vue</url>
+          <line>1</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
