@@ -38,11 +38,11 @@ class SecurityController extends AbstractController
             'error' => $error,
         ], JsonEncoder::FORMAT);
 
-        return new JsonResponse($data, Response::HTTP_OK, [], true);
+        return new JsonResponse($data, Response::HTTP_BAD_REQUEST, [], true);
     }
 
     /**
-     * @Route("/logout", name="app_logout")
+     * @Route("/api/logout", name="app_logout")
      */
     public function logout()
     {

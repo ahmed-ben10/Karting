@@ -1,5 +1,5 @@
 <template>
-    <form v-if="formSchema" class="form-horizontal">
+    <form v-if="formSchema" class="form-horizontal" @submit.prevent="submit">
         <div class="form-group" v-for="(field, key) in formSchema">
             <component :is="field.fieldType"
                        :keyField="key"
@@ -10,7 +10,6 @@
                        :disabled="disabled"
                        :for-text="field.name"
                        :isRequired="field.required"
-                       @submit="submit"
                        @change="fieldChange"
             />
         </div>
@@ -20,16 +19,24 @@
 <script>
 import Input from './fields/Input.vue';
 import Label from './fields/Label.vue';
+import DatePicker from './fields/DatePicker.vue';
 import Button from './fields/Button.vue';
 import InputLabel from './fields/InputLabel.vue';
+import DatePickerLabel from './fields/DatePickerLabel.vue';
+import TimePickerLabel from './fields/TimePickerLabel.vue';
+import TimePicker from './fields/TimePicker.vue';
 
 export default {
     name: "Form",
     components: {
         Input,
         InputLabel,
+        DatePicker,
+        DatePickerLabel,
         Label,
-        Button
+        Button,
+        TimePicker,
+        TimePickerLabel
     },
     props: {
         formSchema: {

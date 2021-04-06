@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Soortactiviteit;
 use App\Entity\User;
 use App\Form\ActiviteitType;
+use App\Form\FormHandler;
 use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
 use http\Exception\BadMessageException;
@@ -50,14 +51,15 @@ class BezoekerController extends AbstractController
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);
-        $this->processForm($request, $form);
+        FormHandler::processForm($request, $form);
         if (!$form->isValid()) {
-            $errors = $this->getErrorsFromForm($form);
+            $errors = FormHandler::getErrorsFromForm($form);
             $data = [
                 'type' => 'validation_error',
                 'title' => 'Er is een validatie error',
                 'errors' => $errors
             ];
+
             return new JsonResponse($data, Response::HTTP_BAD_REQUEST);
         }
 
@@ -78,11 +80,11 @@ class BezoekerController extends AbstractController
         $em->persist($user);
         $em->flush();
 
-
         $data = [
             'type' => 'success',
             'title' => 'Gebruiker successvol aangemaakt',
         ];
+
         return new JsonResponse($data, Response::HTTP_OK);
     }
 
@@ -95,28 +97,5 @@ class BezoekerController extends AbstractController
         $data = $this->serializer->serialize($posts, JsonEncoder::FORMAT);
 
         return new JsonResponse($data, Response::HTTP_OK, [], true);
-    }
-
-    private function processForm(Request $request, FormInterface $form)
-    {
-        $data = json_decode($request->getContent(), true);
-        $clearMissing = $request->getMethod() != 'PATCH';
-        $form->submit($data, $clearMissing);
-    }
-
-    private function getErrorsFromForm(FormInterface $form)
-    {
-        $errors = array();
-        foreach ($form->getErrors() as $error) {
-            $errors[] = $error->getMessage();
-        }
-        foreach ($form->all() as $childForm) {
-            if ($childForm instanceof FormInterface) {
-                if ($childErrors = $this->getErrorsFromForm($childForm)) {
-                    $errors[$childForm->getName()] = $childErrors;
-                }
-            }
-        }
-        return $errors;
     }
 }

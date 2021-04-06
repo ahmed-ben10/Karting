@@ -57,12 +57,14 @@ export default {
     name: "Aanbod",
     data: function () {
         return {
-            soortActiviteiten: []
+            soortActiviteiten: null
         }
     },
     created() {
         axios.get('/api/soort_activiteit').then((res) => {
             this.soortActiviteiten = res.data;
+        }).catch(error => {
+            // this.$notify
         })
     }
 }

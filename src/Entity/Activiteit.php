@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Carbon\Carbon;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
@@ -58,6 +59,7 @@ class Activiteit
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\NotBlank(message="vul een limiet in")
      */
     private $limiet;
 
@@ -99,11 +101,21 @@ class Activiteit
     /**
      * Get datum
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDatum()
     {
         return $this->datum;
+    }
+
+    /**
+     * Get datum
+     *
+     * @return string
+     */
+    public function getDatumFormatted()
+    {
+        return Carbon::parse($this->datum)->format('d-m-Y');
     }
 
     /**
@@ -123,11 +135,18 @@ class Activiteit
     /**
      * Get tijd
      *
-     * @return \DateTime
      */
     public function getTijd()
     {
         return $this->tijd;
+    }
+
+    /**
+     * Get tijd in string
+     */
+    public function getTijdFormatted()
+    {
+        return Carbon::parse($this->tijd)->format('H:i');
     }
 
     public function getSoort()
@@ -137,7 +156,7 @@ class Activiteit
 
     public function setSoort($soort)
     {
-        $this->soort=$soort;
+        $this->soort = $soort;
     }
 
     public function getLimiet(): ?int
@@ -152,12 +171,12 @@ class Activiteit
         return $this;
     }
 
-    public function getBeschikbarePlaatsen() : int
+    public function getBeschikbarePlaatsen(): int
     {
         return $this->limiet - count($this->users);
     }
 
-    public function isMogelijkOmInTeSchrijven() : bool
+    public function isMogelijkOmInTeSchrijven(): bool
     {
         return $this->getBeschikbarePlaatsen() > 0;
     }

@@ -1,23 +1,21 @@
 <template>
-    <div>
-        <input
-            class="form-control"
-            :type="type"
-            v-model="valueModel"
-            :name="type"
-            @keyup="change">
-    </div>
+    <timepicker
+        v-model="valueModel"
+        :input-class="'form-control'"
+        :format="'HH:mm'"
+        :name="name"
+        @change="change"/>
 </template>
 
 <script>
+import Timepicker from 'vue2-timepicker/src/vue-timepicker.vue'
+
 export default {
-    name: "Input",
+    name: "TimePicker",
+    components: {
+        Timepicker
+    },
     props: {
-        type: {
-            type: String,
-            default: 'text',
-            required: false
-        },
         value: {
             type: String,
             default: '',
@@ -34,7 +32,7 @@ export default {
     },
     data: function () {
         return {
-            valueModel: ''
+            valueModel: null
         }
     },
     created() {

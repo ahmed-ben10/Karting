@@ -4,27 +4,21 @@
             :for-text="forText"
             :label="label"/>
         <div class="col-sm-6">
-            <Input :type="type"
-                   :value="value"
-                   :name="name"
-                   :keyField="keyField"
-                   @change="fieldChange"/>
+            <TimePicker :value="value"
+                        :name="name"
+                        :keyField="keyField"
+                        @change="fieldChange"/>
         </div>
     </div>
 </template>
 
 <script>
-import Input from "./Input";
 import Label from "./Label";
+import TimePicker from "./TimePicker";
 
 export default {
-    name: "InputLabel",
+    name: "TimePickerLabel",
     props: {
-        type: {
-            type: String,
-            default: 'text',
-            required: false
-        },
         value: {
             type: String,
             default: '',
@@ -49,7 +43,7 @@ export default {
     },
     components: {
         Label,
-        Input
+        TimePicker
     },
     methods: {
         fieldChange(key, value) {
