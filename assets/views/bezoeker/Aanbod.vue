@@ -45,7 +45,7 @@
             </p>
         </article>
         <figure>
-            <img class="img-responsive center-block" style="width:30%" :src="'build/img/kart.jpg'" alt="kart"/>
+            <img class="img-responsive center-block" style="width:30%" :src="host + 'build/img/kart.jpg'" alt="kart"/>
         </figure>
     </section>
 </template>
@@ -57,14 +57,19 @@ export default {
     name: "Aanbod",
     data: function () {
         return {
-            soortActiviteiten: null
+            soortActiviteiten: []
+        }
+    },
+    computed: {
+        host() {
+            return window.location.origin.concat('/');
         }
     },
     created() {
         axios.get('/api/soort_activiteit').then((res) => {
             this.soortActiviteiten = res.data;
         }).catch(error => {
-            // this.$notify
+            console.error(error)
         })
     }
 }

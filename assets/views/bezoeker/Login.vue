@@ -59,7 +59,7 @@ export default {
                 this.$notify({group: 'message', text: 'Ingelogd', type: 'success'})
 
                 if (this.user.roles.includes('ROLE_ADMIN')) {
-                    this.$router.push({name: 'BezoekerHome'})
+                    this.$router.push({name: 'MedewerkerActiviteiten'})
                 } else {
                     this.$router.push({name: 'DeelnemerActiviteiten'})
                 }
