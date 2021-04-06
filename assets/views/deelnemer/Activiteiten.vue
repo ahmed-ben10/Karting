@@ -18,10 +18,10 @@
             <tr v-for="activiteit in beschikbareActiviteiten"
                 v-bind:class="{'text-danger': !activiteit.mogelijkOmInTeSchrijven }">
                 <td>
-                    {{ activiteit.datum }}
+                    {{ activiteit.datumFormatted }}
                 </td>
                 <td>
-                    {{ activiteit.tijd }}
+                    {{ activiteit.tijdFormatted }}
                 </td>
 
                 <td>
@@ -34,7 +34,7 @@
                     {{ activiteit.beschikbarePlaatsen }}
                 </td>
                 <td title="schrijf in voor activiteit">
-                    <a href="#" v-if="activiteit.mogelijkOmInTeSchrijven">
+                    <a @click="inschrijven(activiteit.id)" v-if="activiteit.mogelijkOmInTeSchrijven">
                         <span class="glyphicon glyphicon-plus" style="color:red"></span>
                     </a>
                     <span v-else>
@@ -61,10 +61,10 @@
             <tbody>
             <tr v-for="activiteit in ingeschrevenActiviteiten">
                 <td>
-                    {{ activiteit.datum }}
+                    {{ activiteit.datumFormatted }}
                 </td>
                 <td>
-                    {{ activiteit.tijd }}
+                    {{ activiteit.tijdFormatted }}
                 </td>
 
                 <td>
@@ -74,7 +74,7 @@
                     &euro;{{ activiteit.soort.prijs }}
                 </td>
                 <td title="schrijf in voor activiteit">
-                    <a href="#">
+                    <a @click="uitschrijven(activiteit.id)">
                         <span class="glyphicon glyphicon-minus" style="color:red"></span>
                     </a>
                 </td>
@@ -109,11 +109,29 @@ export default {
         }
     },
     created() {
-        axios.get('/api/user/activiteiten').then((res) => {
-            this.ingeschrevenActiviteiten = res.data.ingeschrevenActiviteiten;
-            this.beschikbareActiviteiten = res.data.beschikbareActiviteiten;
-            this.totaal = res.data.totaal;
-        })
+        this.fillData();
+    },
+    methods: {
+        fillData() {
+            axios.get('/api/user/activiteiten').then((res) => {
+                this.ingeschrevenActiviteiten = res.data.ingeschrevenActiviteiten;
+                this.beschikbareActiviteiten = res.data.beschikbareActiviteiten;
+                this.totaal = res.data.totaal;
+            })
+        },
+        inschrijven(id) {
+            axios.get('/api/user/inschrijven/' + id).then((res) => {
+                this.fillData();
+            }).catch(error =>{
+                console.error(error)
+            });        },
+        uitschrijven(id) {
+            axios.get('/api/user/uitschrijven/' + id).then((res) => {
+                this.fillData();
+            }).catch(error =>{
+                console.error(error)
+            });
+        }
     }
 }
 </script>
