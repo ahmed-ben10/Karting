@@ -1,5 +1,7 @@
 <template>
-    <button :type="type" class="btn btn-primary" @click="submit" :disabled="disabled">{{ label }}</button>
+    <div class="col-sm-offset-2 col-sm-10">
+        <button :type="type" class="btn btn-primary" :disabled="disabled">{{ label }}</button>
+    </div>
 </template>
 
 <script>
@@ -19,11 +21,6 @@ export default {
             type: Boolean,
             required: false,
             default: false
-        }
-    },
-    methods: {
-        submit() {
-            this.$emit('submit');
         }
     }
 }

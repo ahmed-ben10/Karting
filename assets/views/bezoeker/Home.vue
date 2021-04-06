@@ -5,7 +5,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">SODI SR4 Simply Stunning</div>
                     <div class="panel-body">
-                        <img class="img-responsive center-block" style="width:70%" :src="'build/img/sodiLR4.png'" />
+                        <img class="img-responsive center-block" style="width:70%" :src="'build/img/sodiLR4.png'"/>
                     </div>
                 </div>
             </div>
@@ -13,7 +13,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">SODI SR5 Comfort and Style</div>
                     <div class="panel-body">
-                        <img class="img-responsive center-block " style="width:70%" :src="'build/img/sodiLR5.png'" />
+                        <img class="img-responsive center-block " style="width:70%" :src="'build/img/sodiLR5.png'"/>
                     </div>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading">SODI 2DRIVE Dream Racer</div>
                     <div class="panel-body">
-                        <img class="img-responsive center-block " style="width:70%" :src="'build/img/sodi2Drive.png'" />
+                        <img class="img-responsive center-block " style="width:70%" :src="'build/img/sodi2Drive.png'"/>
                     </div>
                 </div>
             </div>
@@ -44,7 +44,7 @@
 
 <script>
 export default {
-name: "Home"
+    name: "Home"
 }
 </script>
 

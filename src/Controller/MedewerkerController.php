@@ -8,17 +8,30 @@ use App\Entity\User;
 use App\Form\ActiviteitType;
 use App\Form\SoortActiviteitType;
 use App\Form\UserType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\SerializerInterface;
 
 class MedewerkerController extends AbstractController
 {
+    private $serializer;
+    private $em;
+
+    public function __construct(EntityManagerInterface $em, SerializerInterface $serializer)
+    {
+        $this->em = $em;
+        $this->serializer = $serializer;
+    }
+
     /**
-     * @Route("/admin/activiteiten", name="activiteitenoverzicht")
+     * @Route("/api/admin/activiteiten", name="activiteitenoverzicht")
      */
     public function activiteitenOverzichtAction()
     {
@@ -27,13 +40,36 @@ class MedewerkerController extends AbstractController
             ->getRepository('App:Activiteit')
             ->findAll();
 
-        return $this->render('medewerker/activiteiten.html.twig', [
-            'activiteiten' => $activiteiten
-        ]);
+        $data = [
+            'activiteiten' => $activiteiten,
+        ];
+
+        $data = $this->serializer->serialize($data, JsonEncoder::FORMAT);
+
+        return new JsonResponse($data, Response::HTTP_OK, [], true);
     }
 
     /**
-     * @Route("/admin/details/{id}", name="details")
+     * @Route("/api/admin/activiteiten_aantal", name="activiteiten_aantal")
+     */
+    public function activiteitenAantalOverzichtAction()
+    {
+
+        $activiteiten = $this->getDoctrine()
+            ->getRepository('App:Activiteit')
+            ->findAll();
+
+        $data = [
+            'aantal' => count($activiteiten),
+        ];
+
+        $data = $this->serializer->serialize($data, JsonEncoder::FORMAT);
+
+        return new JsonResponse($data, Response::HTTP_OK, [], true);
+    }
+
+    /**
+     * @Route("/api/admin/activiteiten/{id}", name="details_activiteiten")
      */
     public function detailsAction($id)
     {
@@ -48,30 +84,18 @@ class MedewerkerController extends AbstractController
             ->getRepository('App:User')
             ->getDeelnemers($id);
 
-
-        return $this->render('medewerker/details.html.twig', [
+        $data = [
             'activiteit' => $activiteit,
             'deelnemers' => $deelnemers,
-            'aantal' => count($activiteiten)
-        ]);
+        ];
+
+        $data = $this->serializer->serialize($data, JsonEncoder::FORMAT);
+
+        return new JsonResponse($data, Response::HTTP_OK, [], true);
     }
 
     /**
-     * @Route("/admin/beheer", name="beheer")
-     */
-    public function beheerAction()
-    {
-        $activiteiten = $this->getDoctrine()
-            ->getRepository('App:Activiteit')
-            ->findAll();
-
-        return $this->render('medewerker/beheer.html.twig', [
-            'activiteiten' => $activiteiten
-        ]);
-    }
-
-    /**
-     * @Route("/admin/add", name="add")
+     * @Route("/api/admin/add", name="add")
      */
     public function addAction(Request $request)
     {
@@ -141,7 +165,7 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/admin/delete/{id}", name="delete")
+     * @Route("/api/admin/delete/{id}", name="delete_activiteit")
      */
     public function deleteAction($id)
     {
@@ -151,12 +175,13 @@ class MedewerkerController extends AbstractController
         $em->remove($a);
         $em->flush();
 
-        $this->addFlash(
-            'notice',
-            'activiteit verwijderd!'
-        );
-        return $this->redirectToRoute('beheer');
 
+        $data = $this->serializer->serialize([
+            'type' => 'success',
+            'title' => 'activiteit verwijderd!',
+        ], JsonEncoder::FORMAT);
+
+        return new JsonResponse($data, Response::HTTP_OK, [], true);
     }
 
     /**
@@ -320,7 +345,7 @@ class MedewerkerController extends AbstractController
 
         $this->addFlash(
             'notice',
-            'Wachtwoord van '. $user->getUsername() . ' gereset'
+            'Wachtwoord van ' . $user->getUsername() . ' gereset'
         );
         return $this->redirectToRoute('deelnemersoverzicht');
 

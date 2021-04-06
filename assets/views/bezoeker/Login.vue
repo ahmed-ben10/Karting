@@ -31,9 +31,12 @@
 
 <script>
 import axios from "axios";
+import store from "../../store/store";
+import {mapGetters, mapActions} from 'vuex';
 
 export default {
     name: "Login",
+    store: store,
     data: function () {
         return {
             form: {
@@ -42,14 +45,26 @@ export default {
             }
         }
     },
+    computed: {
+        ...mapGetters({
+            user: 'user/getUser'
+        })
+    },
     methods: {
+        ...mapActions({
+            login: 'user/login'
+        }),
         submit() {
-            axios.post('api/login', this.form).then((res) => {
-                if (res.data.error) {
-                    this.$notify({group: 'message', text: res.data.error.message})
+            this.login(this.form).then(() => {
+                this.$notify({group: 'message', text: 'Ingelogd', type: 'success'})
+
+                if (this.user.roles.includes('ROLE_ADMIN')) {
+                    this.$router.push({name: 'BezoekerHome'})
+                } else {
+                    this.$router.push({name: 'DeelnemerActiviteiten'})
                 }
             }).catch((error) => {
-                console.error(error)
+                this.$notify({group: 'message', text: error.response.data.error.messageKey, type: 'warn'})
             });
         }
     }

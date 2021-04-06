@@ -9,23 +9,13 @@
         <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}"/>
         <link rel="stylesheet" href="{{ asset('css/jquery-ui-timepicker-addon.css') }}"/>
-
+        <link rel="stylesheet" href="{{ asset('build/app.css') }}"/>
     {% endblock %}
     {% block javascripts %}
         <script src="{{ asset('js/jquery-3.2.1.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('js/jquery-ui.js') }}"></script>
         <script src="{{ asset('js/jquery-ui-timepicker-addon.js') }}"></script>
-        <script>
-            $(function () {
-                $(".js-datepicker").datepicker({
-                    dateFormat: 'dd-mm-yy'
-
-                });
-
-                $('.js-timepicker').timepicker();
-            });
-        </script>
         <script src="{{ asset('build/app.js') }}"></script>
         {{ encore_entry_script_tags('app') }}
     {% endblock %}

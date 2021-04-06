@@ -12,10 +12,10 @@ class ActiviteitRepository extends \Doctrine\ORM\EntityRepository
 {
     public function getBeschikbareActiviteiten($userid)
     {
-        $em=$this->getEntityManager();
-        $query=$em->createQuery("SELECT a FROM App:Activiteit a WHERE :userid NOT MEMBER OF a.users AND a.datum > CURRENT_DATE() ORDER BY a.datum");
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT a FROM App:Activiteit a WHERE :userid NOT MEMBER OF a.users AND a.datum > CURRENT_DATE() ORDER BY a.datum");
 
-        $query->setParameter('userid',$userid);
+        $query->setParameter('userid', $userid);
 
         return $query->getResult();
     }
@@ -23,10 +23,10 @@ class ActiviteitRepository extends \Doctrine\ORM\EntityRepository
     public function getIngeschrevenActiviteiten($userid)
     {
 
-        $em=$this->getEntityManager();
-        $query=$em->createQuery("SELECT a FROM App:Activiteit a WHERE :userid MEMBER OF a.users ORDER BY a.datum");
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT a FROM App:Activiteit a WHERE :userid MEMBER OF a.users ORDER BY a.datum");
 
-        $query->setParameter('userid',$userid);
+        $query->setParameter('userid', $userid);
 
         return $query->getResult();
     }
@@ -34,16 +34,16 @@ class ActiviteitRepository extends \Doctrine\ORM\EntityRepository
     public function getTotaal($activiteiten)
     {
 
-        $totaal=0;
-        foreach($activiteiten as $a)
-        {
-            $totaal+=$a->getSoort()->getPrijs();
+        $totaal = 0;
+        foreach ($activiteiten as $activiteit) {
+            $totaal += $activiteit->getSoort()->getPrijs();
         }
-        return $totaal;
 
+        return $totaal;
     }
+
     public function findAll()
     {
-        return $this->findBy(array(),array('datum'=>'ASC'));
+        return $this->findBy(array(), array('datum' => 'ASC'));
     }
 }

@@ -15,13 +15,15 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
+import store from './store/store';
 import Notifications from 'vue-notification';
 
 Vue.config.devtools = true;
 Vue.use(Notifications);
 
 new Vue({
-    components: { App },
+    components: {App},
     template: "<App/>",
+    store,
     router,
 }).$mount('#app');
