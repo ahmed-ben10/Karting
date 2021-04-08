@@ -36,7 +36,7 @@ export default {
         }
     },
     created() {
-        this.valueModel = this.value ? this.value : '';
+        this.valueModel = this.value ? this.value : '00:00';
     },
     methods: {
         change() {

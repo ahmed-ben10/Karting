@@ -73,7 +73,7 @@ export default {
         }),
         deleteActiviteit(id) {
             this.remove(id).then(res => {
-                this.$notify({group: 'message', text: res.data.title, type: 'success'})
+                this.$notify({group: 'message', text: res.title, type: 'success'})
             }).catch(error => {
                 console.error(error)
             });

@@ -4,8 +4,7 @@
             class="form-control"
             :type="type"
             v-model="valueModel"
-            :name="type"
-            @keyup="change">
+            :name="type"/>
     </div>
 </template>
 
@@ -43,6 +42,11 @@ export default {
     methods: {
         change() {
             this.$emit('change', this.keyField, this.valueModel);
+        }
+    },
+    watch: {
+        valueModel() {
+            this.change();
         }
     }
 }

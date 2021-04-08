@@ -47,7 +47,7 @@ class BezoekerController extends AbstractController
      * @param UserPasswordEncoderInterface $passwordEncoder
      * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
-    public function registreren(Request $request, UserPasswordEncoderInterface $passwordEncoder, ValidatorInterface $validator)
+    public function registreren(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
         $user = new User();
         $form = $this->createForm(UserType::class, $user);

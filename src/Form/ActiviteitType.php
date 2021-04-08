@@ -33,6 +33,7 @@ class ActiviteitType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => Activiteit::class,
+            'csrf_protection' => false
         ));
 
     }

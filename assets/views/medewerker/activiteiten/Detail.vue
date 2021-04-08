@@ -67,7 +67,7 @@ export default {
     methods: {
         fillData() {
             const id = this.$route.params.id
-            axios.get('/api/admin/activiteiten/' + id).then((res) => {
+            axios.get('/api/admin/activiteiten/' + id + '/detail').then((res) => {
                 this.activiteit = res.data.activiteit;
                 this.deelnemers = res.data.deelnemers;
             })

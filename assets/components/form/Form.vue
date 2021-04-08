@@ -10,6 +10,7 @@
                        :disabled="disabled"
                        :for-text="field.name"
                        :isRequired="field.required"
+                       :options="field.options"
                        @change="fieldChange"
             />
         </div>
@@ -25,6 +26,8 @@ import InputLabel from './fields/InputLabel.vue';
 import DatePickerLabel from './fields/DatePickerLabel.vue';
 import TimePickerLabel from './fields/TimePickerLabel.vue';
 import TimePicker from './fields/TimePicker.vue';
+import SingleSelect from './fields/SingleSelect.vue';
+import SingleSelectLabel from './fields/SingleSelectLabel.vue';
 
 export default {
     name: "Form",
@@ -36,7 +39,9 @@ export default {
         Label,
         Button,
         TimePicker,
-        TimePickerLabel
+        TimePickerLabel,
+        SingleSelect,
+        SingleSelectLabel
     },
     props: {
         formSchema: {

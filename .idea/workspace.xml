@@ -23,63 +23,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f998fb49-941e-4e83-8eb6-c8d662ec20e4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/DatePickerLabel.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/store/modules/activiteiten.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/store/modules/user.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/store/store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/Deelnemer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/Medewerker.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/deelnemer/Activiteiten.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Add.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Beheer.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Detail.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Edit.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/overzicht.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Form/FormHandler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/karting.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/karting.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/SingleSelect.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/components/form/fields/SingleSelectLabel.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/store/modules/soort_activiteiten.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/views/medewerker/soortActiviteit/overzicht.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/components/form/Form.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/Form.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/form/fields/Button.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/fields/Button.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/form/fields/DatePicker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/fields/DatePicker.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/components/form/fields/Input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/fields/Input.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/components/form/fields/InputLabel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/fields/InputLabel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/components/form/fields/TimePicker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/components/form/fields/TimePicker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/store/modules/activiteiten.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/store/modules/activiteiten.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/store/store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/styles/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/assets/styles/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/views/Bezoeker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/Bezoeker.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Aanbod.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Aanbod.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/views/bezoeker/Registreren.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/bezoeker/Registreren.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/Medewerker.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/Medewerker.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Add.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Add.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Beheer.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Beheer.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Detail.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Detail.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/Edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/views/medewerker/activiteiten/overzicht.vue" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/BezoekerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/BezoekerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/DeelnemerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/MedewerkerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Entity/Activiteit.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Activiteit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/ActiviteitRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/ActiviteitRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/bezoeker/registreren.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/activiteiten.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/deelnemer/wijzig_deelnemer.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/activiteiten.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/add.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/add.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/beheer.html.twig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/deelnemers.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/deelnemers.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/medewerker/details.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Form/ActiviteitType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/ActiviteitType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/medewerker/soort_activiteiten.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -231,7 +200,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/styles" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/views/medewerker/activiteiten" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -241,18 +210,18 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projects\Karting\assets\views\medewerker\soortActiviteit" />
       <recent name="C:\projects\Karting\assets\views\medewerker\activiteiten" />
       <recent name="C:\projects\Karting\assets\store\modules" />
       <recent name="C:\projects\Karting\assets\components\form" />
       <recent name="C:\projects\Karting\public\js" />
-      <recent name="C:\projects\Karting\assets" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\projects\Karting\assets\styles" />
+      <recent name="C:\projects\Karting\assets\views\medewerker\activiteiten" />
+      <recent name="C:\projects\Karting\assets\store\modules" />
       <recent name="C:\projects\Karting\assets\components\form\fields" />
+      <recent name="C:\projects\Karting\assets\styles" />
       <recent name="C:\projects\Karting\assets\views\medewerker" />
-      <recent name="C:\projects\Karting\assets\views" />
-      <recent name="C:\projects\Karting\assets\views\deelnemer" />
     </key>
   </component>
   <component name="RunManager">
@@ -300,6 +269,9 @@
       <workItem from="1617567840813" duration="72000" />
       <workItem from="1617618685301" duration="10048000" />
       <workItem from="1617705888298" duration="3779000" />
+      <workItem from="1617775697949" duration="74000" />
+      <workItem from="1617864681687" duration="203000" />
+      <workItem from="1617864901963" duration="1225000" />
     </task>
     <servers />
   </component>
@@ -327,17 +299,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="94" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1617281776986" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617619681686">
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617713769571">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1617619681686" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1617713769571" />
     <state x="516" y="256" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1617620095359">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="516" y="256" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824@0.0.1536.824" timestamp="1617620095359" />
-    <state x="2512" y="219" key="FileChooserDialogImpl" timestamp="1617174484237">
-      <screen x="1920" y="0" width="1536" height="832" />
+    <state x="592" y="217" key="FileChooserDialogImpl" timestamp="1617865069098">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="592" y="217" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1617865069098" />
     <state x="740" y="274" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1616999378023" />
     <state x="2512" y="219" key="FileChooserDialogImpl/1920.0.1536.832/0.0.1920.1040@1920.0.1536.832" timestamp="1617174484237" />
     <state x="597" y="135" key="NewPhpClassDialog" timestamp="1617619650720">
@@ -348,22 +321,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1617279276879" />
-    <state x="711" y="551" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617533039830">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="682" y="578" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1617728578672">
+      <screen x="0" y="0" width="1474" height="864" />
     </state>
+    <state x="682" y="578" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1474.864@0.0.1474.864" timestamp="1617728578672" />
     <state x="711" y="551" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1617533039830" />
-    <state x="478" y="145" width="629" height="624" key="find.popup" timestamp="1617709748681">
+    <state x="263" y="0" width="1144" height="558" key="dock-window-1" timestamp="1617722915151">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="478" y="145" width="629" height="624" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1617709748681" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1617089514958">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="263" y="0" width="1144" height="558" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1617722915151" />
+    <state x="301" y="131" width="604" height="655" key="find.popup" timestamp="1617728745722">
+      <screen x="0" y="0" width="1474" height="864" />
     </state>
+    <state x="301" y="131" width="604" height="655" key="find.popup/0.0.1474.864@0.0.1474.864" timestamp="1617728745722" />
+    <state x="478" y="145" width="629" height="624" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1617724117660" />
+    <state x="408" y="196" key="run.anything.popup" timestamp="1617729024023">
+      <screen x="0" y="0" width="1474" height="864" />
+    </state>
+    <state x="408" y="196" key="run.anything.popup/0.0.1474.864@0.0.1474.864" timestamp="1617729024023" />
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1617089514958" />
-    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1617709581296">
+    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup" timestamp="1617866928004">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617709581296" />
+    <state x="414" y="153" width="672" height="711" key="search.everywhere.popup/0.0.1474.864@0.0.1474.864" timestamp="1617729777787" />
+    <state x="430" y="146" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1617866928004" />
     <state x="539" y="183" width="840" height="856" key="search.everywhere.popup/1920.0.1536.832/0.0.1920.1040@0.0.1920.1040" timestamp="1617000228991" />
   </component>
   <component name="XDebuggerManager">
@@ -396,7 +377,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/assets/views/medewerker/activiteiten/Beheer.vue</url>
-          <line>2</line>
+          <line>1</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">

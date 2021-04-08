@@ -45,7 +45,7 @@ class Activiteit
     /**
      * @ORM\ManyToOne(targetEntity="Soortactiviteit", inversedBy="activiteiten")
      * @ORM\JoinColumn(name="soort_id",referencedColumnName="id")
-     *
+     * @Assert\NotBlank(message="Kies een soort activiteit uit")
      */
 
     private $soort;

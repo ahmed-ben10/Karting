@@ -1,6 +1,7 @@
 <template>
     <datepicker :value="value"
                 :name="name"
+                :placeholder="'dd-mm-yyyy'"
                 :format="'dd-MM-yyyy'"
                 :input-class="'form-control'"
                 v-model="valueModel"

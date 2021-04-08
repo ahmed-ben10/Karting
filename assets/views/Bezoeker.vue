@@ -26,19 +26,19 @@
                 <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
                         <li>
-                            <router-link to="/">Home</router-link>
+                            <router-link :to="{name: 'BezoekerHome'}" active-class="active" exact>Home</router-link>
                         </li>
                         <li>
-                            <router-link to="/kartactiviteiten">Aanbod</router-link>
+                            <router-link :to="{name: 'BezoekerAanbod'}" active-class="active" exact>Aanbod</router-link>
                         </li>
                         <li>
-                            <router-link to="/registreren">Registreren</router-link>
+                            <router-link :to="{name: 'BezoekerRegistreren'}" active-class="active" exact>Registreren</router-link>
                         </li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li>
-                            <router-link to="/login" active-class="active" exact>Login</router-link>
+                            <router-link :to="{name: 'BezoekerLogin'}" active-class="active" exact>Login</router-link>
                         </li>
                     </ul>
                 </div>
@@ -62,6 +62,8 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style scoped>
+.router-link-exact-active{
+    background-color: lightgray;
+    color: red;
+}</style>

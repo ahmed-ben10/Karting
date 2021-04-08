@@ -30,7 +30,9 @@
                             <router-link :to="{name: 'MedewerkerActiviteiten'}">Home</router-link>
                         </li>
                         <li>
-                            <router-link :to="{name: 'MedewerkerActiviteitenBeheer'}"><span class="badge">{{ aantal }}</span>Beheer
+                            <router-link :to="{name: 'MedewerkerActiviteitenBeheer'}"><span class="badge">{{
+                                    aantal
+                                }}</span>Beheer
                             </router-link>
                         </li>
                         <li>
@@ -56,31 +58,29 @@
 </template>
 
 <script>
-import {mapActions} from "vuex";
+import {mapActions, mapGetters} from "vuex";
 import store from "../store/store";
 import axios from "axios";
 
 export default {
     name: "Medewerker",
     store: store,
-    data: function () {
-        return {
-            aantal: 0
-        }
-    },
     computed: {
+        ...mapGetters({
+            aantal: 'activiteiten/getActiviteitenCount'
+        }),
         host() {
             return window.location.origin.concat('/');
         }
     },
     created() {
-        this.updateAantal();
-
+        this.loadData();
     },
     methods: {
         ...mapActions({
             logoutUser: 'user/logout',
-            getUser: 'user/getUser'
+            getUser: 'user/getUser',
+            loadData: 'activiteiten/loadData',
         }),
         logout() {
             this.logoutUser().then(() => {
@@ -92,18 +92,11 @@ export default {
                 })
                 this.$router.push({name: 'BezoekerHome'})
             })
-        },
-        updateAantal() {
-            axios.get('/api/admin/activiteiten_aantal').then((res) => {
-                this.aantal = res.data.aantal;
-            }).catch(error => {
-                console.error(error)
-            })
         }
     },
     watch: {
         $route(to, from) {
-            this.updateAantal();
+            this.loadData();
         }
     }
 }
