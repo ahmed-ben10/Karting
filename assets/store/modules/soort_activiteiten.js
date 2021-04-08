@@ -7,35 +7,29 @@ const state = {
 const getters = {
     getActiviteiten(state) {
         return state.all;
-    },
-    getActiviteitenCount(state) {
-        return state.all.length;
     }
 };
 
 const actions = {
     loadData({commit}) {
-        return axios.get('/api/admin/activiteiten').then((res) => {
+        return axios.get('/api/admin/soort_activiteiten').then((res) => {
             const activiteiten = res.data.activiteiten;
             commit('setData', activiteiten)
             return activiteiten;
         })
     },
-    getById({state}, id) {
-        return state.all.find(item => item.id === id);
-    },
     add({commit}, data) {
-        return axios.post('/api/admin/activiteiten/add', data).then((res) => {
+        return axios.post('/api/admin/soort_activiteiten/add', data).then((res) => {
             return res.data;
         })
     },
     edit({commit}, id, data) {
-        return axios.post('/api/admin/activiteiten/' + id + '/edit', data).then((res) => {
+        return axios.post('/api/admin/soort_activiteiten/' + id + '/edit', data).then((res) => {
             return res.data;
         })
     },
     delete({commit}, id) {
-        return axios.post('/api/admin/activiteiten/' + id + '/delete').then((res) => {
+        return axios.post('/api/admin/soort_activiteiten/' + id + '/delete').then((res) => {
             commit('removeActiviteit', id)
             return res.data;
         });

@@ -6,30 +6,47 @@
             </caption>
             <thead>
             <tr>
-                <td>datum</td>
-                <td>tijd</td>
-                <td>soort activiteit</td>
-                <td>deelnemers</td>
-                <td>plaatsen</td>
+                <td>naam</td>
+                <td>beschrijving</td>
+                <td>prijs</td>
+                <td>tijdsduur</td>
+                <td>minimum leeftijd</td>
+                <td></td>
+                <td></td>
             </tr>
             </thead>
             <tbody>
             <tr v-for="activiteit in activiteiten">
                 <td>
-                    {{ activiteit.datumFormatted }}
+                    {{ activiteit.naam }}
                 </td>
                 <td>
-                    {{ activiteit.tijdFormatted }}
+                    {{ activiteit.beschrijving }}
                 </td>
 
                 <td>
-                    {{ activiteit.soort.naam }}
+                    {{ activiteit.prijs }}
                 </td>
                 <td>
-                    {{ activiteit.users.length }}
+                    {{ activiteit.tijdsduur }}
                 </td>
                 <td>
-                    {{ activiteit.limiet }}
+                    {{ activiteit.minLeeftijd }}
+                </td>
+                <td title="details">
+                    <router-link :to="{name:'MedewerkerActiviteitenEdit', params: {id: activiteit.id}}">
+                        <a class="glyphicon glyphicon-pencil" style="color:red"></a>
+                    </router-link>
+                </td>
+                <td title="details">
+                    <a @click="deleteActiviteit(activiteit.id)" class="glyphicon glyphicon-minus" style="color:red"></a>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="6">
+                    <router-link :to="{name: 'MedewerkerActiviteitenAdd'}">
+                        <span class="glyphicon glyphicon-plus" style="color:red"></span>
+                    </router-link>
                 </td>
             </tr>
             </tbody>

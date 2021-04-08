@@ -6,6 +6,7 @@ use App\Entity\Activiteit;
 use App\Entity\Soortactiviteit;
 use App\Entity\User;
 use App\Form\ActiviteitType;
+use App\Form\FormHandler;
 use App\Form\SoortActiviteitType;
 use App\Form\UserType;
 use Doctrine\ORM\EntityManagerInterface;
@@ -31,13 +32,12 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/api/admin/activiteiten", name="activiteitenoverzicht")
+     * @Route("/api/admin/activiteiten", name="admin_activiteiten_overzicht")
      */
     public function activiteitenOverzichtAction()
     {
-
         $activiteiten = $this->getDoctrine()
-            ->getRepository('App:Activiteit')
+            ->getRepository(Activiteit::class)
             ->findAll();
 
         $data = [
@@ -50,26 +50,7 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/api/admin/activiteiten_aantal", name="activiteiten_aantal")
-     */
-    public function activiteitenAantalOverzichtAction()
-    {
-
-        $activiteiten = $this->getDoctrine()
-            ->getRepository('App:Activiteit')
-            ->findAll();
-
-        $data = [
-            'aantal' => count($activiteiten),
-        ];
-
-        $data = $this->serializer->serialize($data, JsonEncoder::FORMAT);
-
-        return new JsonResponse($data, Response::HTTP_OK, [], true);
-    }
-
-    /**
-     * @Route("/api/admin/activiteiten/{id}", name="details_activiteiten")
+     * @Route("/api/admin/activiteiten/{id}/detail", name="details_activiteiten")
      */
     public function detailsAction($id)
     {
@@ -95,77 +76,74 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/api/admin/add", name="add")
+     * @Route("/api/admin/activiteiten/add", name="admin_add_activiteiten")
      */
-    public function addAction(Request $request)
+    public function addActiviteitAction(Request $request)
     {
-        // create a user and a contact
-        $a = new Activiteit();
+        // create a activiteit
+        $activiteit = new Activiteit();
 
-        $form = $this->createForm(ActiviteitType::class, $a);
-        $form->add('save', SubmitType::class, array('label' => "voeg toe"));
-        //$form->add('reset', ResetType::class, array('label'=>"reset"));
+        $form = $this->createForm(ActiviteitType::class, $activiteit);
+        FormHandler::processForm($request, $form);
 
-        $form->handleRequest($request);
+        if (!$form->isValid()) {
+            $errors = FormHandler::getErrorsFromForm($form);
+            $data = [
+                'type' => 'validation_error',
+                'title' => 'Er is een validatie error',
+                'errors' => $errors
+            ];
 
-        if ($form->isSubmitted() && $form->isValid()) {
-
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($a);
-            $em->flush();
-
-            $this->addFlash(
-                'notice',
-                'activiteit toegevoegd!'
-            );
-            return $this->redirectToRoute('beheer');
+            return new JsonResponse($data, Response::HTTP_BAD_REQUEST);
         }
-        $activiteiten = $this->getDoctrine()
-            ->getRepository('App:Activiteit')
-            ->findAll();
-        return $this->render('medewerker/add.html.twig', array('form' => $form->createView(), 'naam' => 'toevoegen', 'aantal' => count($activiteiten)
-        ));
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($activiteit);
+        $em->flush();
+
+        $data = [
+            'type' => 'success',
+            'title' => 'Activiteit successvol aangemaakt',
+        ];
+
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     /**
-     * @Route("/admin/update/{id}", name="update")
+     * @Route("/api/admin/activiteiten/{id}/update", name="admin_update_activiteit")
      */
     public function updateAction($id, Request $request)
     {
-        $a = $this->getDoctrine()
+        $activiteit = $this->getDoctrine()
             ->getRepository('App:Activiteit')
             ->find($id);
 
-        $form = $this->createForm(ActiviteitType::class, $a);
-        $form->add('save', SubmitType::class, array('label' => "aanpassen"));
+        $form = $this->createForm(ActiviteitType::class, $activiteit);
+        FormHandler::processForm($request, $form);
 
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
+        if (!$form->isValid()) {
+            $errors = FormHandler::getErrorsFromForm($form);
+            $data = [
+                'type' => 'validation_error',
+                'title' => 'Er is een validatie error',
+                'errors' => $errors
+            ];
 
-            $em = $this->getDoctrine()->getManager();
-
-            // tells Doctrine you want to (eventually) save the contact (no queries yet)
-            $em->persist($a);
-
-
-            // actually executes the queries (i.e. the INSERT query)
-            $em->flush();
-            $this->addFlash(
-                'notice',
-                'activiteit aangepast!'
-            );
-            return $this->redirectToRoute('beheer');
+            return new JsonResponse($data, Response::HTTP_BAD_REQUEST);
         }
+        $em = $this->getDoctrine()->getManager();
+        $em->persist($activiteit);
+        $em->flush();
 
-        $activiteiten = $this->getDoctrine()
-            ->getRepository('App:Activiteit')
-            ->findAll();
+        $data = [
+            'type' => 'success',
+            'title' => 'Activiteit successvol gewijzigd',
+        ];
 
-        return $this->render('medewerker/add.html.twig', array('form' => $form->createView(), 'naam' => 'aanpassen', 'aantal' => count($activiteiten)));
+        return new JsonResponse($data, Response::HTTP_OK);
     }
 
     /**
-     * @Route("/api/admin/delete/{id}", name="delete_activiteit")
+     * @Route("/api/admin/activiteiten/{id}/delete", name="delete_activiteit")
      */
     public function deleteAction($id)
     {
@@ -185,19 +163,22 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/admin/soort_activiteiten", name="soort_activiteitenoverzicht")
+     * @Route("/api/admin/soort_activiteiten", name="admin_activiteitensoort_overzicht")
      */
-    public function soortActiviteitenOverzichtAction()
+    public function activiteitenSoortOverzichtAction()
     {
 
-        $activiteiten = $this->getDoctrine()
-            ->getRepository(Soortactiviteit::class)
+        $soortActiviteit = $this->getDoctrine()
+            ->getRepository('App:Soortactiviteit')
             ->findAll();
 
-        return $this->render('medewerker/soort_activiteiten.html.twig', [
-            'activiteiten' => $activiteiten,
-            'aantal' => count($activiteiten)
-        ]);
+        $data = [
+            'soortActiviteit' => $soortActiviteit,
+        ];
+
+        $data = $this->serializer->serialize($data, JsonEncoder::FORMAT);
+
+        return new JsonResponse($data, Response::HTTP_OK, [], true);
     }
 
     /**
