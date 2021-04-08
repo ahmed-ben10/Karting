@@ -55,7 +55,6 @@ export default {
         fieldChange(key, value) {
             this.$emit('change', key, value);
         }
-
     }
 }
 </script>

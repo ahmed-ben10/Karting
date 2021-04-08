@@ -12,7 +12,7 @@ import {mapActions} from "vuex";
 import axios from "axios";
 
 export default {
-    name: "Add",
+    name: "ActiviteitenAdd",
     store: store,
     components: {
         Form

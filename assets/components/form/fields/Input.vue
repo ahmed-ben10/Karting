@@ -28,7 +28,7 @@ export default {
         },
         keyField: {
             type: String,
-            required: true
+            required: false
         }
     },
     data: function () {
@@ -37,16 +37,22 @@ export default {
         }
     },
     created() {
-        this.valueModel = this.value ? this.value : '';
+        this.valueModel = this.value;
     },
     methods: {
         change() {
-            this.$emit('change', this.keyField, this.valueModel);
+            const value = this.type === 'number'
+                ? parseInt(this.valueModel)
+                : this.valueModel;
+            this.$emit('change', this.keyField, value);
         }
     },
     watch: {
         valueModel() {
             this.change();
+        },
+        value(newVal) {
+            this.valueModel = newVal;
         }
     }
 }

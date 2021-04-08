@@ -61,7 +61,7 @@ import store from "../../../store/store";
 import {mapGetters, mapActions} from 'vuex';
 
 export default {
-    name: "ActiviteitBeheer",
+    name: "ActiviteitenBeheer",
     store: store,
     created() {
         this.loadData();

@@ -42,6 +42,11 @@ export default {
         change() {
             this.$emit('change', this.keyField, this.valueModel);
         }
+    },
+    watch: {
+        value(newVal){
+            this.valueModel = newVal;
+        }
     }
 }
 </script>

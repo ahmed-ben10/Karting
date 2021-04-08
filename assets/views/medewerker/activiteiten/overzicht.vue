@@ -39,12 +39,11 @@
 </template>
 
 <script>
-import axios from "axios";
 import store from "../../../store/store";
 import {mapGetters, mapActions} from 'vuex';
 
 export default {
-    name: "SoortActiviteitOverzicht",
+    name: "ActiviteitOverzicht",
     store: store,
     created() {
         this.loadData();

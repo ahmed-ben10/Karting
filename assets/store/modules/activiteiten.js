@@ -21,16 +21,13 @@ const actions = {
             return activiteiten;
         })
     },
-    getById({state}, id) {
-        return state.all.find(item => item.id === id);
-    },
     add({commit}, data) {
         return axios.post('/api/admin/activiteiten/add', data).then((res) => {
             return res.data;
         })
     },
-    edit({commit}, id, data) {
-        return axios.post('/api/admin/activiteiten/' + id + '/edit', data).then((res) => {
+    edit({commit}, data) {
+        return axios.post('/api/admin/activiteiten/' + data.id + '/edit', data.data).then((res) => {
             return res.data;
         })
     },
