@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Form;
+
 use App\Entity\Activiteit;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
@@ -19,16 +20,17 @@ class ActiviteitType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('datum', DateType::class, ['attr' => ['class' => 'js-datepicker', 'placeholder'=>'dd-mm-yyyy'],
-            'widget'=>'single_text', 'html5' => false, 'format'=> 'dd-MM-yyyy'
-               ])
-            ->add('tijd', TimeType::class, ['attr' => ['class' => 'js-timepicker', 'placeholder'=>'hh:mm'],
-                'widget'=>'single_text','html5' => false,])
+            ->add('datum', DateType::class, ['attr' => ['class' => 'js-datepicker', 'placeholder' => 'dd-mm-yyyy'],
+                'widget' => 'single_text', 'html5' => false, 'format' => 'dd-MM-yyyy'
+            ])
+            ->add('tijd', TimeType::class, ['attr' => ['class' => 'js-timepicker', 'placeholder' => 'hh:mm'],
+                'widget' => 'single_text', 'html5' => false,])
             ->add('limiet', NumberType::class)
             ->add('soort', EntityType::class,
                 array('class' => 'App:Soortactiviteit',
                     'choice_label' => 'naam',));
     }
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

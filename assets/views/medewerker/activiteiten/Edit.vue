@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h3>Activiteit</h3>
+    <div v-if="activiteit">
+        <h3>Wijzigen {{ activiteit.soort.naam }} - ({{ activiteit.datumFormatted}} - {{ activiteit.tijdFormatted}})</h3>
         <Form :form-schema="form_schema" @submit="submit"/>
     </div>
 </template>
@@ -12,7 +12,7 @@ import {mapActions, mapGetters} from "vuex";
 import axios from "axios";
 
 export default {
-    name: "Edit",
+    name: "ActiviteitenEdit",
     store: store,
     components: {
         Form
@@ -24,31 +24,36 @@ export default {
                     fieldType: 'DatePickerLabel',
                     name: 'datum',
                     label: 'Datum',
+                    value: ''
                 },
                 tijd: {
                     fieldType: 'TimePickerLabel',
                     name: 'tijd',
                     label: 'Tijd',
+                    value: ''
                 },
                 limiet: {
                     fieldType: 'InputLabel',
                     name: 'username',
                     type: 'number',
                     label: 'Limiet',
+                    value: ''
                 },
                 soort: {
                     fieldType: 'SingleSelectLabel',
                     options: [],
                     name: 'soort',
-                    label: 'Soort'
+                    label: 'Soort',
+                    value: ''
                 },
                 button: {
                     fieldType: 'Button',
-                    label: 'Aanmaken',
+                    label: 'Wijzigen',
                     type: 'submit',
                     required: false
                 }
-            }
+            },
+            activiteit: null
         }
     },
     computed: {
@@ -57,16 +62,21 @@ export default {
         })
     },
     created() {
-        this.getById(this.$route.params.id).then(res => console.log(res));
-        this.fillData();
+        this.getOptions();
     },
     methods: {
         ...mapActions({
             loadData: 'activiteiten/loadData',
             edit: 'activiteiten/edit',
-            getById: 'activiteiten/getById'
         }),
-        async fillData() {
+        fillData() {
+            this.activiteit = this.activiteiten.find(x => x.id == this.$route.params.id);
+            this.form_schema.datum.value = this.activiteit.datumFormatted;
+            this.form_schema.tijd.value = this.activiteit.tijdFormatted;
+            this.form_schema.limiet.value = this.activiteit.limiet.toString();
+            this.form_schema.soort.value = this.activiteit.soort.naam;
+        },
+        async getOptions() {
             let soortActiviteiten = [];
             let options = [];
 
@@ -80,18 +90,17 @@ export default {
                     value: soortActiviteiten[i].naam
                 });
             }
-
             this.form_schema.soort.options = options;
         },
         submit(formData) {
-            this.edit(id, formData).then(res => {
+            this.edit({data: formData, id: this.activiteit.id}).then(res => {
                 this.$notify({
                     group: 'message',
                     title: res.title,
                     type: 'success',
                     duration: 10000
                 })
-                this.$router.push({name: 'MedewerkerActiviteiten'});
+                this.$router.push({name: 'MedewerkerActiviteitenBeheer'});
             }).catch(error => {
                 let errors = error.response.data.errors;
                 for (let key in errors) {
@@ -104,6 +113,13 @@ export default {
                     })
                 }
             });
+        }
+    },
+    watch: {
+        activiteiten(newVal) {
+            if (newVal) {
+                this.fillData();
+            }
         }
     }
 }

@@ -49,11 +49,22 @@ export default {
             let value = '';
             if (this.valueModel !== null) value = this.valueModel.key;
             this.$emit('change', this.keyField, value);
+        },
+        updateValueModel(){
+            if (this.options.length) {
+                this.valueModel = this.options.find(option => option.value === this.value);
+            }
         }
     },
-    watch : {
-        valueModel(){
+    watch: {
+        valueModel() {
             this.change();
+        },
+        value() {
+            this.updateValueModel();
+        },
+        options(){
+            this.updateValueModel();
         }
     }
 }

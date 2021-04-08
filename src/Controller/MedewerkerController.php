@@ -109,7 +109,7 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/api/admin/activiteiten/{id}/update", name="admin_update_activiteit")
+     * @Route("/api/admin/activiteiten/{id}/edit", name="admin_update_activiteit")
      */
     public function updateAction($id, Request $request)
     {
@@ -237,7 +237,7 @@ class MedewerkerController extends AbstractController
     }
 
     /**
-     * @Route("/admin/soort_activiteiten/edit/{id}", name="soort_activiteiten_edit")
+     * @Route("/admin/soort_activiteiten/{id}/edit", name="soort_activiteiten_edit")
      */
     public function editSoortActiviteitenAction(Request $request, $id)
     {

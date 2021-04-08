@@ -53,6 +53,14 @@ export default {
                 this.$emit('change', this.keyField, date);
             }
         }
+    },
+    watch: {
+        valueModel() {
+            this.change();
+        },
+        value(newVal){
+            this.valueModel = newVal;
+        }
     }
 }
 </script>

@@ -34,11 +34,10 @@ class Activiteit
     private $datum;
 
     /**
-     * @var \DateTime
-     *
+     * @Assert\Time
      * @ORM\Column(name="tijd", type="time")
+     * @var string A "H:i" formatted value
      * @Assert\NotBlank(message="vul een tijd in")
-     *
      */
     private $tijd;
 

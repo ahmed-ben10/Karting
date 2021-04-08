@@ -53,7 +53,7 @@ import axios from "axios";
 import store from "../../../store/store";
 
 export default {
-    name: "Detail",
+    name: "ActiviteitenDetail",
     store: store,
     data: function () {
         return {
