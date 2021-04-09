@@ -11,6 +11,7 @@
                 <td>soort activiteit</td>
                 <td>deelnemers</td>
                 <td>plaatsen</td>
+                <td></td>
             </tr>
             </thead>
             <tbody>
@@ -30,6 +31,11 @@
                 </td>
                 <td>
                     {{ activiteit.limiet }}
+                </td>
+                <td title="details">
+                    <router-link :to="{name:'MedewerkerActiviteitenDetail', params: {id: activiteit.id}}">
+                        <a class="glyphicon glyphicon-search" style="color:red"></a>
+                    </router-link>
                 </td>
             </tr>
             </tbody>

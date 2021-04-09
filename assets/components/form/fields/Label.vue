@@ -8,7 +8,7 @@ export default {
     props: {
         forText: {
             type: String,
-            required: true
+            required: false
         },
         label: {
             type: String,

@@ -32,20 +32,11 @@ export default {
                     label: 'Gebruikersnaam'
                 },
                 plainPassword: {
-                    fieldType: 'InputLabel',
+                    fieldType: 'ConfirmLabel',
                     name: 'plainPassword',
                     label: 'Wachtwoord',
+                    labelSecond: 'Herhaal wachtwoord',
                     type: 'password',
-                    hasConfirm: true
-                },
-                plainPasswordRepeat: {
-                    fieldType: 'InputLabel',
-                    name: 'plainPasswordRepeat',
-                    required: false,
-                    label: 'Herhaal Wachtwoord',
-                    isConfirm: true,
-                    confirmField: 'plainPassword',
-                    type: 'password'
                 },
                 voorletters: {
                     fieldType: 'InputLabel',

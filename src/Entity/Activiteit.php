@@ -108,13 +108,23 @@ class Activiteit
     }
 
     /**
-     * Get datum
+     * Get datum format dd-mm-yyyy
      *
      * @return string
      */
     public function getDatumFormatted()
     {
         return Carbon::parse($this->datum)->format('d-m-Y');
+    }
+
+    /**
+     * Get datum format mm-dd-yyyy
+     *
+     * @return string
+     */
+    public function getDatumFormattedAmerican()
+    {
+        return Carbon::parse($this->datum)->format('m-d-Y');
     }
 
     /**

@@ -1,9 +1,7 @@
 <template>
     <section>
-        <table class="table" style="table-layout: fixed">
-            <caption>
-                Dit zijn alle beschikbare activiteiten
-            </caption>
+        <h4>Dit zijn alle beschikbare activiteiten</h4>
+        <table v-if="beschikbareActiviteiten.length" class="table" style="table-layout: fixed">
             <thead>
             <tr>
                 <td>datum</td>
@@ -44,11 +42,9 @@
             </tr>
             </tbody>
         </table>
-
-        <table class="table" style="table-layout: fixed">
-            <caption>
-                Dit zijn de door jou ingeschreven activiteiten
-            </caption>
+        <p v-else>Geen beschikbare activiteiten gevonden</p>
+        <h4>Dit zijn de door jou ingeschreven activiteiten</h4>
+        <table v-if="ingeschrevenActiviteiten.length" class="table" style="table-layout: fixed">
             <thead>
             <tr>
                 <td>datum</td>
@@ -93,6 +89,7 @@
             </tr>
             </tbody>
         </table>
+        <p v-else>Geen ingeschreven activiteiten gevonden</p>
     </section>
 </template>
 
@@ -104,8 +101,8 @@ export default {
     data: function () {
         return {
             totaal: 0,
-            ingeschrevenActiviteiten: {},
-            beschikbareActiviteiten: {}
+            ingeschrevenActiviteiten: [],
+            beschikbareActiviteiten: []
         }
     },
     created() {
@@ -122,13 +119,14 @@ export default {
         inschrijven(id) {
             axios.get('/api/user/inschrijven/' + id).then((res) => {
                 this.fillData();
-            }).catch(error =>{
+            }).catch(error => {
                 console.error(error)
-            });        },
+            });
+        },
         uitschrijven(id) {
             axios.get('/api/user/uitschrijven/' + id).then((res) => {
                 this.fillData();
-            }).catch(error =>{
+            }).catch(error => {
                 console.error(error)
             });
         }
