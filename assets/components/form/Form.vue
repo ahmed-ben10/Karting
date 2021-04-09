@@ -6,9 +6,12 @@
                        :type="field.type"
                        :value="field.value"
                        :name="field.name"
+                       :name-second="field.nameSecond"
                        :label="field.label"
+                       :label-second="field.labelSecond"
                        :disabled="disabled"
                        :for-text="field.name"
+                       :for-text-second="field.nameSecond"
                        :isRequired="field.required"
                        :options="field.options"
                        @change="fieldChange"
@@ -28,6 +31,7 @@ import TimePickerLabel from './fields/TimePickerLabel.vue';
 import TimePicker from './fields/TimePicker.vue';
 import SingleSelect from './fields/SingleSelect.vue';
 import SingleSelectLabel from './fields/SingleSelectLabel.vue';
+import ConfirmLabel from './fields/ConfirmLabel.vue';
 
 export default {
     name: "Form",
@@ -41,7 +45,8 @@ export default {
         TimePicker,
         TimePickerLabel,
         SingleSelect,
-        SingleSelectLabel
+        SingleSelectLabel,
+        ConfirmLabel
     },
     props: {
         formSchema: {
@@ -57,11 +62,7 @@ export default {
     created() {
         if (this.formSchema) {
             for (const [key, field] of Object.entries(this.formSchema)) {
-                if(field.hasConfirm){
-                    this.formData[key] = {};
-                    this.formData[key]['first'] = '';
-                    this.formData[key]['second'] = '';
-                } else if ((field.required && field.required !== false) || field.required !== false) {
+                if ((field.required && field.required !== false) || field.required !== false) {
                     this.formData[key] = field.value ? field.value : '';
                 }
             }
@@ -72,14 +73,7 @@ export default {
             this.$emit('submit', this.formData);
         },
         fieldChange(key, value) {
-            if (!this.formSchema[key].isConfirm && !this.formSchema[key].hasConfirm) {
-                this.formData[key] = value;
-            } else if (this.formSchema[key].hasConfirm) {
-                this.formData[key].first = value;
-            } else if (this.formSchema[key].isConfirm) {
-                const field = this.formSchema[key].confirmField;
-                this.formData[field].second = value;
-            }
+            this.formData[key] = value;
         }
     }
 }

@@ -24,11 +24,11 @@ export default {
         },
         name: {
             type: String,
-            required: true
+            required: false
         },
         keyField: {
             type: String,
-            required: false
+            required: true
         }
     },
     data: function () {

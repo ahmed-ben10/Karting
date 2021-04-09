@@ -32,11 +32,11 @@ export default {
         },
         name: {
             type: String,
-            required: true
+            required: false
         },
         forText: {
             type: String,
-            required: true
+            required: false
         },
         label: {
             type: String,

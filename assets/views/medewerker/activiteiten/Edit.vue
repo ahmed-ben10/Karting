@@ -71,7 +71,7 @@ export default {
         }),
         fillData() {
             this.activiteit = this.activiteiten.find(x => x.id == this.$route.params.id);
-            this.form_schema.datum.value = this.activiteit.datumFormatted;
+            this.form_schema.datum.value = this.activiteit.datumFormattedAmerican;
             this.form_schema.tijd.value = this.activiteit.tijdFormatted;
             this.form_schema.limiet.value = this.activiteit.limiet.toString();
             this.form_schema.soort.value = this.activiteit.soort.naam;
